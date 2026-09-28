@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="preload" as="image" href="About Assets/ABT FULL ART 4.webp" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>About Quakely - Earthquake Safety Hero</title>
+    <link rel="icon" type="image/png" href="Q LOGO 2.png" />
+
+    <meta property="og:title" content="Learn more about Quakely!" />
+    <meta
+      property="og:image"
+      content="https://quakelywebsite.vercel.app/Home%20Assets/HOME%20FULL%20ART%202.webp"
+    />
+    <meta
+      property="og:url"
+      content="https://quakelywebsite.vercel.app/about.html"
+    />
+    <meta property="og:type" content="website" />
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles/about.css" rel="stylesheet" />
+    <style>
+      /* Nav logo + links hover */
+      .nav-logo {
+        display: inline-block;
+        transition:
+          translate 0.25s ease,
+          filter 0.25s ease;
+      }
+
+      .nav-logo:hover {
+        translate: 0 -2px;
+        filter: brightness(1.08) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
+      }
+
+      .nav-links a {
+        display: inline-block;
+        transition:
+          translate 0.2s ease,
+          filter 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        translate: 0 -2px;
+        filter: brightness(1.15);
+      }
+
+      .btn-download {
+        display: inline-block;
+        transition:
+          translate 0.2s ease,
+          filter 0.2s ease;
+      }
+
+      .btn-download:hover {
+        translate: 0 -3px;
+        filter: brightness(1.1);
+      }
+
+      /* Hero About logo hover (Chichi gif excluded) */
+      .hero-abt-logo {
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+        transition:
+          translate 0.25s ease,
+          filter 0.25s ease;
+      }
+
+      .hero-abt-logo:hover {
+        translate: 0 -4px;
+        filter: brightness(1.08) drop-shadow(0 8px 18px rgba(0, 0, 0, 0.2));
+      }
+
+      /* Teaser video container hover */
+      .red-video-container {
+        transition:
+          translate 0.25s ease,
+          filter 0.25s ease;
+        cursor: pointer;
+      }
+
+      .red-video-container:hover {
+        translate: 0 -4px;
+        filter: brightness(1.05) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+      }
+
+      /* Mascot stickers hover */
+      .sticker-paopao,
+      .sticker-chichi,
+      .sticker-ningning {
+        transition:
+          translate 0.25s ease,
+          filter 0.25s ease;
+        cursor: pointer;
+      }
+
+      .sticker-paopao:hover,
+      .sticker-chichi:hover,
+      .sticker-ningning:hover {
+        translate: 0 -5px;
+        filter: brightness(1.08) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.18));
+      }
+
+      /* Paper cards hover (Mission/Vision, Why We Made It, Gameplay paper) */
+      .paper-card,
+      .gameplay-paper-wrapper {
+        transition:
+          translate 0.25s ease,
+          filter 0.25s ease;
+      }
+
+      .paper-card:hover,
+      .gameplay-paper-wrapper:hover {
+        translate: 0 -4px;
+        filter: brightness(1.04) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
+      }
+
+      /* Polaroid photos hover */
+      .polaroids-row img {
+        transition:
+          translate 0.25s ease,
+          filter 0.25s ease;
+        cursor: pointer;
+      }
+
+      .polaroids-row img:hover {
+        translate: 0 -4px;
+        filter: brightness(1.06) drop-shadow(0 6px 12px rgba(0, 0, 0, 0.18));
+      }
+
+      /* Carousel arrows - press/keyboard feedback instead of hover (works on touch too) */
+      .carousel-btn {
+        transition:
+          translate 0.15s ease,
+          filter 0.15s ease;
+      }
+
+      /* Carousel cards - persistent highlight on the active card, press feedback on tap */
+      .carousel-card {
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+        cursor: pointer;
+      }
+
+      .carousel-card:focus-visible {
+        outline: 3px solid #ffd000;
+        outline-offset: 2px;
+      }
+
+      /* Contact icons hover */
+      .contact-icon-circle {
+        transition:
+          translate 0.2s ease,
+          filter 0.2s ease;
+      }
+
+      .contact-icon-circle:hover {
+        translate: 0 -3px;
+        filter: brightness(1.1) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <!-- Top Section -->
+      <section class="section-art">
+        <header class="navbar">
+          <a class="nav-logo" href="index.html">
+            <img
+              alt="Quakely Logo"
+              height="356"
+              src="Home Assets/Quakely Primary Logo.webp"
+              width="2000"
+            />
+          </a>
+          <button aria-expanded="false" aria-label="Menu" id="resp-nav-toggle">
+            ☰
+          </button>
+
+          <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a class="active" href="about.html">ABOUT QUAKELY</a></li>
+            <li><a href="devs.html">THE DEVELOPERS</a></li>
+            <li><a href="art.html">ART</a></li>
+            <li><a href="feedback.html">FEEDBACK</a></li>
+            <li class="nav-download-item">
+              <a class="btn-download" href="download.html">
+                <span>DOWNLOAD</span>
+              </a>
+            </li>
+          </ul>
+        </header>
+        <div class="hero-content-stage">
+          <img
+            alt="About Quakely Logo"
+            class="hero-abt-logo"
+            height="563"
+            src="About Assets/ABT LOGO.webp"
+            width="1369"
+          />
+          <img
+            class="hero-chick-gif desktop-only"
+            src="About Assets/chichi_point_talk.gif"
+            alt="Chichi talking"
+            width="720"
+            height="1280"
+          />
+        </div>
+      </section>
+      <!--Floor Background -->
+      <main class="floor-section">
+        <!-- Table 1: Teaser Section -->
+        <div class="table-board-unit">
+          <img
+            alt="Table and Chair Board"
+            class="table-chair-bg"
+            height="2369"
+            loading="lazy"
+            src="About Assets/TABLE AND CHAIR.webp"
+            width="3791"
+          />
+          <div class="board-overlay-content">
+            <h2 class="section-board-title title-teaser">TEASER</h2>
+            <div class="red-video-container">
+              <iframe
+                loading="lazy"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                allowfullscreen=""
+                frameborder="0"
+                src="https://www.youtube.com/embed/n-upKyNUd9M"
+                style="display: block; width: 100%; height: 100%; border: 0"
+                title="Quakely Teaser"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        <!-- Table 2 -->
+        <div class="table-board-unit">
+          <img
+            alt="Table and Chair Board"
+            class="table-chair-bg"
+            height="2369"
+            loading="lazy"
+            src="About Assets/TABLE AND CHAIR.webp"
+            width="3791"
+          />
+          <div class="board-overlay-content" style="padding-top: 20px">
+            <div class="papers-layout-wrapper">
+              <img
+                alt="Paopao Mascot"
+                class="sticker-paopao"
+                height="572"
+                loading="lazy"
+                src="About Assets/PAOPAO STICKER.webp"
+                width="591"
+              />
+              <img
+                alt="Chichi Mascot"
+                class="sticker-chichi"
+                height="563"
+                loading="lazy"
+                src="About Assets/CHICHI STICKER.webp"
+                width="569"
+              />
+              <img
+                alt="Ningning Mascot"
+                class="sticker-ningning"
+                height="578"
+                loading="lazy"
+                src="About Assets/NINGNING STICKER.webp"
+                width="575"
+              />
+              <div class="left-paper-column">
+                <div class="paper-card">
+                  <img
+                    alt="Mission and Vision"
+                    class="paper-short-img"
+                    height="1266"
+                    loading="lazy"
+                    src="About Assets/WHITE PAPER SHORT.webp"
+                    width="1266"
+                  />
+                  <div class="paper-text-overlay overlay-left">
+                    <h3 class="paper-heading">MISSION & VISION</h3>
+                    <p class="paper-text">
+                      To provide a localized, child-friendly digital learning
+                      experience that complements traditional school earthquake
+                      drills. Quakely aims to empower students to act safely and
+                      confidently during seismic emergencies by transforming
+                      passive lessons into engaging, interactive simulations.
+                    </p>
+                  </div>
+                </div>
+                <div class="polaroids-row">
+                  <img
+                    alt="Earthquake Drill"
+                    height="747"
+                    loading="lazy"
+                    src="About Assets/POLA 2.webp"
+                    width="900"
+                  />
+                  <img
+                    alt="Drill Photo"
+                    height="747"
+                    loading="lazy"
+                    src="About Assets/POLA 1.webp"
+                    width="900"
+                  />
+                </div>
+              </div>
+              <div class="right-paper-column">
+                <div class="paper-card">
+                  <img
+                    alt="Why We Made It"
+                    class="paper-long-img"
+                    height="1672"
+                    loading="lazy"
+                    src="About Assets/WHITE PAPER LONG.webp"
+                    width="1266"
+                  />
+                  <div class="paper-text-overlay overlay-right">
+                    <h3 class="paper-heading">WHY WE MADE IT</h3>
+                    <p class="paper-text">
+                      The Philippines' position on the Pacific Ring of Fire
+                      requires constant readiness. While regular school drills
+                      are essential, young learners often need supplementary
+                      tools to practice decision-making without feeling scared
+                      or overwhelmed. By using a micro-learning framework,
+                      stylized Live2D animations, and avoiding graphic disaster
+                      media, Quakely creates a supportive psychological buffer
+                      where kids can learn critical safety steps at their own
+                      pace.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Table 3 -->
+        <div class="table-board-unit">
+          <img
+            alt="Table and Chair Board"
+            class="table-chair-bg"
+            height="2369"
+            loading="lazy"
+            src="About Assets/TABLE AND CHAIR.webp"
+            width="3791"
+          />
+          <div class="board-overlay-content">
+            <h2 class="section-board-title title-gameplay">CORE GAMEPLAY</h2>
+            <div class="gameplay-carousel-container">
+              <button
+                aria-label="Previous Slide"
+                class="carousel-btn btn-prev"
+                onclick="prevSlide()"
+              >
+                <img
+                  alt="Previous"
+                  class="arrow-img arrow-prev-img"
+                  height="2160"
+                  loading="lazy"
+                  src="About Assets/Arrow.webp"
+                  width="3840"
+                />
+              </button>
+              <button
+                aria-label="Next Slide"
+                class="carousel-btn btn-next"
+                onclick="nextSlide()"
+              >
+                <img
+                  alt="Next"
+                  class="arrow-img arrow-next-img"
+                  height="2160"
+                  loading="lazy"
+                  src="About Assets/Arrow.webp"
+                  width="3840"
+                />
+              </button>
+              <div class="carousel-cards-stage">
+                <div
+                  class="carousel-card card-before prev"
+                  onclick="setSlide(0)"
+                >
+                  <img
+                    alt="Before the Quake"
+                    height="4681"
+                    loading="lazy"
+                    src="About Assets/BEFORE CORE.webp"
+                    width="10418"
+                  />
+                </div>
+                <div
+                  class="carousel-card card-during active"
+                  onclick="setSlide(1)"
+                >
+                  <img
+                    alt="During the Quake"
+                    height="4684"
+                    loading="lazy"
+                    src="About Assets/DURING CORE.webp"
+                    width="10421"
+                  />
+                </div>
+                <div
+                  class="carousel-card card-after next"
+                  onclick="setSlide(2)"
+                >
+                  <img
+                    alt="After the Quake"
+                    height="886"
+                    loading="lazy"
+                    src="About Assets/AFTER CORE.webp"
+                    width="1917"
+                  />
+                </div>
+              </div>
+              <div class="gameplay-paper-wrapper">
+                <img
+                  alt="Paper Container"
+                  class="paper-very-short-img"
+                  height="625"
+                  loading="lazy"
+                  src="About Assets/WHITE PAPER VERY SHORT.webp"
+                  width="1719"
+                />
+                <div class="gameplay-text-overlay">
+                  <h3
+                    class="gameplay-title title-color-during"
+                    id="carousel-title"
+                  >
+                    DURING THE QUAKE
+                  </h3>
+                  <p class="gameplay-desc" id="carousel-desc">
+                    Learn how to pack an emergency Go Bag, familiarize yourself
+                    with a First Aid kit, and spot dangerous hazards in your
+                    living room, kitchen, and classroom.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-columns">
+            <div class="footer-left">
+              <p>Quakely by BYTES</p>
+              <p>National University - Manila | CCIT</p>
+              <p style="margin-top: 4px">
+                Contact:
+                <a
+                  class="email-link"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=devteam.bytes@gmail.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  devteam.bytes@gmail.com
+                </a>
+              </p>
+              <div class="contact-icons-row">
+                <a
+                  class="contact-icon-circle"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=devteam.bytes@gmail.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="Compose Email in Gmail"
+                >
+                  <img
+                    alt="Email"
+                    height="30"
+                    loading="lazy"
+                    src="Home Assets/EMAIL ICON.webp"
+                    width="30"
+                  />
+                </a>
+                <a
+                  class="contact-icon-circle"
+                  href="tel:+639991867943"
+                  title="Call Us"
+                >
+                  <img
+                    alt="Phone"
+                    height="30"
+                    loading="lazy"
+                    src="Home Assets/PHONE ICON.webp"
+                    width="30"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="footer-right">
+              <p style="padding-bottom: 4px">
+                Disclaimer: An educational capstone project based<br />
+                on PHIVOLCS guidelines. Not an official<br />
+                government emergency tool.
+              </p>
+              <p class="copyright">© 2026 Team BYTES. All rights reserved.</p>
+            </div>
+          </div>
+          <div class="footer-center">
+            <div class="footer-logos">
+              <img
+                alt="Quakely Logo"
+                class="quakely-logo"
+                height="356"
+                src="Home Assets/Quakely Primary Logo.webp"
+                width="2000"
+              />
+              <img
+                alt="BYTES Logo"
+                class="bytes-logo"
+                height="606"
+                src="Home Assets/BYTES logo transp bg.webp"
+                width="2686"
+              />
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- Scripts -->
+    <script>
+      function togglePlay(container) {
+        const video = container.querySelector("video");
+        if (video) {
+          if (video.paused) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        }
+      }
+
+      const slidesData = [
+        {
+          title: "BEFORE THE QUAKE",
+          desc: "Prepare for an earthquake by packing essential supplies, securing dangerous objects at home and school, and identifying important safety equipment through interactive preparation tasks.",
+          titleClass: "title-color-before",
+        },
+        {
+          title: "DURING THE QUAKE",
+          desc: "Practice staying safe during an earthquake by using Duck, Cover, and Hold, and responding to different earthquake situations at home, outdoors, or while riding a jeepney.",
+          titleClass: "title-color-during",
+        },
+        {
+          title: "AFTER THE QUAKE",
+          desc: "Learn what to do after an earthquake by using emergency supplies, treating injuries, calling for help, clearing safe paths, and helping others evacuate while staying alert for aftershocks.",
+          titleClass: "title-color-after",
+        },
+      ];
+
+      let currentIndex = 1;
+      let hasScrolledCarousel = false;
+
+      function updateCarousel(cards, titleElem, descElem) {
+        cards.forEach((card, index) => {
+          card.classList.remove("active", "prev", "next");
+
+          if (index === currentIndex) {
+            card.classList.add("active");
+          } else if (
+            index ===
+            (currentIndex - 1 + slidesData.length) % slidesData.length
+          ) {
+            card.classList.add("prev");
+          } else {
+            card.classList.add("next");
+          }
+        });
+
+        const containers = document.querySelectorAll(".table-board-unit");
+        containers.forEach((container) => {
+          if (container.querySelector(".active")) {
+            container.classList.add("has-active-child");
+          } else {
+            container.classList.remove("has-active-child");
+          }
+        });
+
+        if (titleElem && descElem) {
+          titleElem.textContent = slidesData[currentIndex].title;
+          descElem.textContent = slidesData[currentIndex].desc;
+          titleElem.className = `gameplay-title ${slidesData[currentIndex].titleClass}`;
+        }
+        const paperWrapper = document.querySelector(".gameplay-paper-wrapper");
+        if (paperWrapper) {
+          paperWrapper.style.display = "";
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll(".carousel-card");
+        const titleElem = document.getElementById("carousel-title");
+        const descElem = document.getElementById("carousel-desc");
+        const btnPrev = document.querySelector(".btn-prev");
+        const btnNext = document.querySelector(".btn-next");
+        const carouselContainer = document.querySelector(
+          ".gameplay-carousel-container",
+        );
+
+        if (!cards.length) return;
+
+        let isAnimating = false;
+        const animationLockTime = 350; // matches transition duration to prevent spam taps
+
+        const handleNext = () => {
+          if (isAnimating) return;
+          isAnimating = true;
+          hasScrolledCarousel = true;
+          currentIndex = (currentIndex + 1) % slidesData.length;
+          updateCarousel(cards, titleElem, descElem);
+          setTimeout(() => {
+            isAnimating = false;
+          }, animationLockTime);
+        };
+
+        const handlePrev = () => {
+          if (isAnimating) return;
+          isAnimating = true;
+          hasScrolledCarousel = true;
+          currentIndex =
+            (currentIndex - 1 + slidesData.length) % slidesData.length;
+          updateCarousel(cards, titleElem, descElem);
+          setTimeout(() => {
+            isAnimating = false;
+          }, animationLockTime);
+        };
+
+        if (btnNext) btnNext.addEventListener("click", handleNext);
+        if (btnPrev) btnPrev.addEventListener("click", handlePrev);
+
+        cards.forEach((card) => {
+          card.addEventListener("click", () => {
+            if (isAnimating) return;
+            isAnimating = true;
+            hasScrolledCarousel = true;
+            const idx = parseInt(card.getAttribute("data-index"), 10);
+            if (!isNaN(idx)) {
+              currentIndex = idx;
+              updateCarousel(cards, titleElem, descElem);
+            }
+            setTimeout(() => {
+              isAnimating = false;
+            }, animationLockTime);
+          });
+        });
+
+        // Touch event handling with passive options to prevent memory/performance leaks
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        const handleTouchStart = (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        };
+
+        const handleTouchEnd = (e) => {
+          if (isAnimating) return;
+          touchEndX = e.changedTouches[0].screenX;
+          const diff = touchStartX - touchEndX;
+          if (Math.abs(diff) > 50) {
+            if (diff > 0) handleNext();
+            else handlePrev();
+          }
+        };
+
+        if (carouselContainer) {
+          carouselContainer.addEventListener("touchstart", handleTouchStart, {
+            passive: true,
+          });
+          carouselContainer.addEventListener("touchend", handleTouchEnd, {
+            passive: true,
+          });
+        }
+
+        updateCarousel(cards, titleElem, descElem);
+        window.addEventListener("resize", () =>
+          updateCarousel(cards, titleElem, descElem),
+        );
+      });
+
+      // Responsive Navbar Toggle
+      const navToggle = document.getElementById("resp-nav-toggle");
+      const navbar = document.querySelector(".navbar");
+      if (navToggle && navbar) {
+        navToggle.addEventListener("click", () => {
+          const isExpanded = navToggle.getAttribute("aria-expanded") === "true";
+          navToggle.setAttribute("aria-expanded", !isExpanded);
+          navbar.classList.toggle("resp-open");
+        });
+      }
+    </script>
+  </body>
+</html>

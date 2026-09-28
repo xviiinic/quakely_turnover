@@ -1,0 +1,1461 @@
+:root {
+  --primary-yellow: #ffd200;
+  --text-brown: #4a2810;
+  --nav-bg: #fffaed;
+  --nav-border: #91532b;
+  --btn-orange-border: #f1b36a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+}
+.page-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+/* TOP SECTION */
+.section-art {
+  position: relative;
+  width: 100%; /* Changed from 105% to eliminate horizontal scroll */
+  aspect-ratio: 16 / 9; /* Locks container proportions to background artwork */
+  height: auto;
+  min-height: auto;
+  background-image: url("../About Assets/ABT FULL ART 4.webp");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100% 100%; /* Stretches background 1:1 with container box */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0 0 0;
+}
+
+.hero-content-stage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* ABT LOGO */
+.hero-abt-logo {
+  position: absolute;
+  top: clamp(
+    280px,
+    34vw,
+    420px
+  ); /* Scales dynamically with viewport width changes */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(240px, 32vw, 500px);
+  max-width: 500px;
+  height: auto;
+  display: block;
+  z-index: 5;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.35));
+}
+
+.hero-chick-gif {
+  position: absolute;
+  bottom: 5%; /* Locks feet directly to the white tile seam */
+  left: 11%; /* Horizontal placement */
+  width: 25%; /* Scales fluidly with container width */
+  max-width: 420px; /* Prevents oversized sprite on 4K/wide PC screens */
+  min-width: 220px; /* Prevents shrinking too small on 13" MacBooks */
+  height: auto;
+  z-index: 5;
+  transform: none;
+}
+
+.hero-bg-art {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.navbar {
+  position: relative;
+  width: calc(100vw - 48px);
+  max-width: 1380px;
+  margin-top: 3vh;
+  height: 48px;
+  background-color: var(--nav-bg);
+  border: 3px solid var(--text-brown);
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  z-index: 30;
+  box-sizing: border-box;
+}
+
+.nav-logo {
+  position: absolute;
+  left: -22px;
+  top: 50%;
+  transform: translateY(-45%);
+  display: flex;
+  align-items: center;
+  z-index: 12;
+}
+
+.nav-logo img {
+  height: 35px;
+  width: auto;
+  display: block;
+  pointer-events: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 85px;
+  margin: 0 auto;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-brown);
+  font-family: "Luckiest Guy", cursive;
+  font-size: 20px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+}
+
+.nav-links a.active {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+
+/* Target only text links so the download button is not affected */
+.nav-links > li > a:hover,
+.nav-links a:not(.btn-download):hover {
+  opacity: 0.8;
+}
+
+.btn-download {
+  position: absolute;
+  right: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 12;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: var(--btn-orange-border);
+  border: 2.5px solid var(--text-brown);
+  border-radius: 8px;
+  padding: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+  transition:
+    filter 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Maintain full opacity, brightness lift, and layout alignment without shifting transform */
+.btn-download:hover,
+.btn-download:hover span {
+  opacity: 1 !important;
+  filter: brightness(1.08);
+}
+
+.btn-download span {
+  display: block;
+  background: radial-gradient(
+    ellipse at center,
+    #3ea383 0%,
+    #2c8065 60%,
+    #165541 100%
+  );
+  border: 1.5px solid #144937;
+  border-radius: 6px;
+  padding: 6px 26px;
+  color: #ffffff;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 26px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 0px rgba(0, 0, 0, 0.45);
+}
+
+.btn-download:active {
+  transform: translateY(calc(-50% + 2px));
+}
+
+/* FLOOR BACKGROUND & TABLE AND CHAIR STACK */
+.floor-section {
+  position: relative;
+  width: 109%;
+  background-color: #ffffff;
+  background-image: url("../About Assets/FLOOR BACKGROUND.webp");
+  background-position: calc(50% + 75px) top;
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -28px;
+  padding: 0 20px 140px 20px;
+  gap: 70px;
+  z-index: 2;
+}
+
+.table-board-unit {
+  position: relative;
+  width: 100%;
+  max-width: 1050px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-chair-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.board-overlay-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+
+.section-board-title {
+  font-family: "Luckiest Guy", cursive;
+  font-size: clamp(38px, 4.5vw, 62px);
+  color: #ffffff;
+  letter-spacing: 3px;
+  -webkit-text-stroke: 8px #523316;
+  paint-order: stroke fill;
+  text-shadow:
+    0 2px 0 #523316,
+    0 4px 0 #523316,
+    0 6px 0 #523316,
+    0 8px 0 rgba(34, 14, 3, 0.5);
+  margin-bottom: 15px;
+}
+
+.title-teaser {
+  position: relative;
+  top: 10px;
+  left: 0px;
+}
+
+.title-gameplay {
+  position: relative;
+  top: 5px;
+  left: 0px;
+}
+
+.red-video-container {
+  position: relative;
+  width: 68%;
+  max-width: 640px;
+  aspect-ratio: 16 / 9;
+  background-color: #d32f2f;
+  border: 10px solid #e31919;
+  border-radius: 3px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 15px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.red-video-container:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.red-video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* MIDDLE TABLE */
+.papers-layout-wrapper {
+  position: relative;
+  width: 82%;
+  max-width: 820px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 28px;
+  margin-top: 10px;
+}
+
+.left-paper-column {
+  position: relative;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  transform: translateX(40px);
+}
+
+.right-paper-column {
+  position: relative;
+  width: 41%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(-40px);
+}
+
+.paper-card {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paper-short-img {
+  width: 100%;
+  height: 330px;
+  display: block;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25));
+}
+
+.paper-long-img {
+  width: 100%;
+  height: 440px;
+  display: block;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25));
+}
+
+.paper-text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.overlay-left {
+  padding: 30px 32px 16px 46px;
+  top: 0px;
+  left: 0px;
+}
+
+.overlay-right {
+  padding: 30px 32px 16px 50px;
+  top: 0px;
+  left: 0px;
+}
+
+.paper-heading {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 30px;
+  color: #4a2810;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.paper-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #614124;
+  line-height: 1.4;
+  width: 92%;
+  margin: 0 auto;
+}
+
+.polaroids-row {
+  position: relative;
+  top: -40px;
+  left: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1px;
+}
+
+.polaroids-row img {
+  width: 75%;
+  height: 215px;
+  display: block;
+  object-fit: cover;
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+  position: relative;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.polaroids-row img:hover {
+  transform: translateY(-10px) scale(1.05) rotate(3deg);
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.4));
+  z-index: 10;
+}
+
+.polaroids-row img + img {
+  margin-left: -15px;
+}
+
+/* Mascot Stickers */
+.sticker-paopao {
+  position: absolute;
+  top: 110px;
+  left: -38px;
+  width: 150px;
+  height: auto;
+  z-index: 10;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  transform: rotate(0deg);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sticker-paopao:hover {
+  transform: rotate(8deg) scale(1.1);
+}
+
+.sticker-chichi {
+  position: absolute;
+  top: 40px;
+  left: 48%;
+  transform: translateX(-30%);
+  width: 150px;
+  height: auto;
+  z-index: 10;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  transform: rotate(0deg);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sticker-chichi:hover {
+  transform: rotate(-8deg) scale(1.1);
+}
+
+.sticker-ningning {
+  position: absolute;
+  bottom: 200px;
+  right: -40px;
+  width: 150px;
+  height: auto;
+  z-index: 10;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  transform: rotate(0deg);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sticker-ningning:hover {
+  transform: rotate(-8deg) scale(1.1);
+}
+
+/* Core Gameplay Carousel */
+.gameplay-carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 820px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.carousel-cards-stage {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-card {
+  position: absolute;
+  width: 48%;
+  max-width: 380px;
+  aspect-ratio: 16 / 9;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+  user-select: none;
+  will-change: transform; /* Added for GPU optimization[cite: 7] */
+}
+
+.carousel-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-card.card-before {
+  border: 5px solid #d81e0f;
+}
+.carousel-card.card-during {
+  border: 5px solid #004aad;
+}
+.carousel-card.card-after {
+  border: 5px solid #f27508;
+}
+
+.carousel-card.active {
+  transform: translate3d(0, 0, 0) scale(1.15); /* Updated to translate3d[cite: 7] */
+  z-index: 5;
+  opacity: 1;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+}
+
+.carousel-card.prev {
+  transform: translate3d(-240px, 0, 0) scale(0.99); /* Updated to translate3d[cite: 7] */
+  z-index: 2;
+  opacity: 0.75;
+  filter: brightness(0.9);
+}
+
+.carousel-card.next {
+  transform: translate3d(240px, 0, 0) scale(0.99); /* Updated to translate3d[cite: 7] */
+  z-index: 2;
+  opacity: 0.75;
+  filter: brightness(0.9);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+  transition:
+    transform 0.15s ease,
+    filter 0.2s ease;
+}
+.carousel-btn,
+.carousel-card {
+  touch-action: manipulation;
+}
+.carousel-btn.btn-prev {
+  left: 140px;
+}
+
+.carousel-btn.btn-next {
+  right: 140px;
+}
+
+.carousel-btn:hover {
+  background: transparent !important;
+  transform: translateY(-50%) scale(1.15);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+.carousel-btn:active,
+.carousel-btn:focus {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  transform: translateY(-50%) scale(0.95);
+}
+
+.arrow-img {
+  width: 90px;
+  height: auto;
+  display: block;
+  pointer-events: none;
+}
+
+.arrow-prev-img {
+  transform: scaleX(-1);
+}
+
+.arrow-next-img {
+  transform: scaleX(1);
+}
+
+.gameplay-paper-wrapper {
+  position: relative;
+  width: 57%;
+  max-width: 480px;
+  margin-top: 15px;
+  top: -5px;
+  left: -15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paper-very-short-img {
+  width: 100%;
+  height: auto;
+  min-height: 125px;
+  display: block;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25));
+}
+
+.gameplay-text-overlay {
+  position: absolute;
+  top: -20px;
+  left: 15px;
+  width: 100%;
+  height: 100%;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.gameplay-title {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 36px;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.gameplay-title.title-color-before {
+  color: #d81e0f;
+}
+.gameplay-title.title-color-during {
+  color: #004aad;
+}
+.gameplay-title.title-color-after {
+  color: #f27508;
+}
+
+.gameplay-desc {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #4a2810;
+  line-height: 1.35;
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* FOOTER */
+.footer {
+  width: 100%;
+  background-color: #705740;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 33px 0 12px 0;
+  z-index: 5;
+}
+
+.footer-inner {
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 40px;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  line-height: 1.4;
+  opacity: 0.95;
+}
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-left p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.email-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.email-link:visited {
+  color: #ffffff;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+.contact-icons-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.contact-icon-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.contact-icon-circle:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
+}
+
+.contact-icon-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.footer-right p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.footer-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.footer-logos {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.footer-logos img.quakely-logo {
+  height: 38px;
+  width: auto;
+}
+
+.footer-logos img.bytes-logo {
+  height: 20px;
+  width: auto;
+}
+
+.copyright {
+  display: block;
+  text-align: right;
+  margin-top: 14px;
+  font-size: 12px;
+  opacity: 0.95;
+  font-weight: 400;
+}
+
+#resp-nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: var(--text-brown);
+  cursor: pointer;
+  padding: 0 10px;
+  position: absolute;
+  right: 15px;
+}
+
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 30px;
+  }
+  .nav-links a {
+    font-size: 18px;
+  }
+  .btn-download span {
+    font-size: 20px;
+    padding: 5px 15px;
+  }
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  /* HEADER & FOOTER */
+  .nav-links {
+    display: flex;
+    gap: 15px;
+    margin: 0 auto;
+  }
+  .nav-links a {
+    font-size: 14px;
+  }
+  .nav-logo {
+    left: 10px;
+  }
+  .nav-logo img {
+    height: 28px;
+  }
+  .btn-download {
+    right: 10px;
+  }
+  .btn-download span {
+    font-size: 14px;
+    padding: 4px 10px;
+  }
+
+  .footer-columns {
+    flex-direction: row;
+    text-align: left;
+    gap: 30px;
+  }
+  .contact-icons-row {
+    justify-content: flex-start;
+  }
+  .footer-right {
+    text-align: right;
+  }
+  .copyright {
+    text-align: right;
+    margin-top: 14px;
+  }
+
+  /* ABOUT PAGE SPECIFIC */
+  .section-art {
+    height: 600px;
+    min-height: 600px;
+  }
+  .hero-abt-logo {
+    position: relative !important;
+    margin-top: 35px !important;
+    top: 30% !important;
+    width: 100% !important;
+    max-width: 350px !important;
+  }
+  .hero-chick-gif {
+    width: 28% !important;
+    bottom: 5%;
+    left: 10%;
+  }
+  .floor-section {
+    padding-top: 20px;
+  }
+  .papers-layout-wrapper {
+    flex-direction: row;
+    gap: 10px;
+  }
+  .left-paper-column,
+  .right-paper-column {
+    width: 50%;
+    transform: none;
+    margin-bottom: 0px;
+  }
+  .polaroids-row {
+    top: -40px;
+    z-index: 5;
+  }
+  .polaroids-row img {
+    height: 130px;
+  }
+  .sticker-paopao {
+    left: -55px;
+  }
+  .sticker-chichi {
+    left: -60px;
+  }
+  .sticker-ningning {
+    right: -85px;
+  }
+  .red-video-container {
+    width: 85%;
+  }
+  .carousel-card {
+    width: 70%;
+  }
+  .carousel-card.prev {
+    transform: translateX(-70px) scale(0.85);
+  }
+  .carousel-card.next {
+    transform: translateX(70px) scale(0.85);
+  }
+  .gameplay-paper-wrapper {
+    width: 85%;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  /* HEADER & FOOTER */
+  @media (max-width: 768px) {
+    /* 1. Navbar Accordion Setup */
+    .navbar {
+      position: relative !important;
+      width: 90% !important;
+      margin: 10px auto 0 auto !important;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 2px 12px !important;
+      height: auto !important;
+      min-height: 36px !important;
+      z-index: 100 !important;
+      border-width: 2px !important;
+    }
+
+    .nav-logo {
+      position: static !important;
+      transform: none !important;
+      margin: 0 !important;
+      margin-left: -20px !important;
+    }
+    .nav-logo img {
+      height: 22px !important;
+      width: auto !important;
+    }
+
+    #resp-nav-toggle {
+      display: block !important;
+      position: static !important;
+      background: transparent !important;
+      border: none !important;
+      font-size: 24px !important;
+      color: var(--text-brown) !important;
+      cursor: pointer !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    .nav-links {
+      display: none !important;
+    }
+    .btn-download {
+      display: none !important;
+    }
+
+    /* When Hamburger is Clicked */
+    .navbar.resp-open {
+      padding-bottom: 20px !important;
+    }
+    .navbar.resp-open .nav-links {
+      display: flex !important;
+      width: 100% !important;
+      flex-direction: column !important;
+      gap: 15px !important;
+      margin-top: 15px !important;
+      order: 3 !important;
+    }
+    .navbar.resp-open .nav-links a {
+      font-size: 18px !important;
+    }
+
+    .navbar.resp-open .btn-download {
+      display: inline-flex !important;
+      position: relative !important;
+      top: auto !important;
+      right: auto !important;
+      transform: none !important;
+      margin: 15px auto 0 auto !important;
+      order: 4 !important;
+    }
+    .navbar.resp-open .btn-download span {
+      font-size: 20px !important;
+      padding: 6px 20px !important;
+    }
+  }
+  .footer-columns {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  .footer-left {
+    text-align: center;
+  }
+  .footer-right {
+    text-align: center;
+  }
+  .contact-icons-row {
+    justify-content: center;
+  }
+  .copyright {
+    text-align: center;
+    margin-top: 0;
+  }
+  .footer-center {
+    margin-top: 20px;
+  }
+  .footer-inner {
+    padding: 0 20px;
+  }
+
+  /* ABOUT PAGE SPECIFIC */
+  .section-art {
+    height: 420px;
+    min-height: 420px;
+    background-size: cover;
+    background-position: center bottom;
+    padding-top: 40px;
+  }
+  .hero-abt-logo {
+    width: 60% !important;
+    top: 27% !important;
+  }
+  .hero-chick-gif {
+    position: absolute;
+    width: 42%; /* Fits mobile screens proportionally */
+    max-width: 240px; /* Keeps it bounded on larger mobile devices */
+    min-width: 150px; /* Prevents shrinking too much on small phones */
+    height: auto !important; /* Overrides fixed heights to preserve original proportions */
+    object-fit: contain !important; /* Prevents any image stretching or cropping */
+    bottom: 8% !important; /* Aligns feet with the floor line on mobile */
+    left: 0; /* Adjusts horizontal positioning */
+    transform: none; /* Removes hardcoded scale/translate distortions */
+  }
+
+  /* NOTE: the rules below were previously leaking outside this mobile
+     media query (a closing brace was placed too early), which caused
+     the fixed-height, cropped table/chair image sizing meant for phones
+     to incorrectly apply on tablet and desktop too. They are now
+     correctly scoped to mobile only (max-width: 600px), matching their
+     original intent and leaving mobile display unchanged. */
+  .floor-section {
+    width: 100%;
+    background-position: center top;
+    padding-bottom: 240px;
+  }
+  .section-board-title {
+    font-size: 24px;
+    margin-bottom: 5px;
+    -webkit-text-stroke: 5px #523316; /* Thinner stroke for mobile */
+    text-shadow:
+      0 1px 0 #523316,
+      0 2px 0 rgba(34, 14, 3, 0.5); /* Scaled-down shadow for mobile */
+  }
+  .title-teaser {
+    position: relative;
+    top: 10px;
+  }
+  .red-video-container {
+    width: 95%;
+    margin-top: 40px;
+  }
+
+  .table-chair-bg {
+    height: 420px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 10px;
+  }
+  .floor-section .table-board-unit:nth-of-type(2) .table-chair-bg {
+    height: 450px;
+  }
+
+  .papers-layout-wrapper {
+    flex-direction: row;
+    gap: 6px;
+    transform: none;
+    margin-top: 10px;
+    align-items: flex-start;
+    padding-bottom: 120px;
+  }
+  .left-paper-column,
+  .right-paper-column {
+    width: 50%;
+    transform: none;
+    position: static;
+  }
+  .paper-short-img,
+  .paper-long-img {
+    height: 230px;
+    object-fit: fill;
+  }
+  .paper-heading {
+    font-size: 13px;
+    margin-bottom: 2px;
+    text-align: center;
+  }
+  .paper-text {
+    font-size: 8px;
+    line-height: 1;
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .overlay-left {
+    padding: 15px 10px 5px 15px;
+  }
+  .overlay-right {
+    padding: 15px 10px 5px 15px;
+  }
+
+  .polaroids-row {
+    position: absolute;
+    top: 245px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  .polaroids-row img {
+    height: 140px;
+    width: auto;
+    transform: rotate(-2deg);
+  }
+
+  .sticker-paopao {
+    width: 45px;
+    top: -10px;
+    left: -10px;
+  }
+  .sticker-chichi {
+    width: 45px;
+    top: -10px;
+    left: auto;
+    right: -18px;
+    transform: none;
+  }
+  .sticker-ningning {
+    width: 45px;
+    bottom: auto;
+    top: 190px;
+    right: -5px;
+  }
+
+  .gameplay-carousel-container {
+    padding-bottom: 30px;
+    transform: none;
+    margin-top: 10px;
+  }
+  .carousel-card {
+    width: 85%;
+  }
+  .carousel-card.prev {
+    transform: translateX(-40px) scale(0.85);
+  }
+  .carousel-card.next {
+    transform: translateX(40px) scale(0.85);
+  }
+  .gameplay-title {
+    font-size: clamp(18px, 5.5vw, 24px) !important;
+    text-align: center !important;
+  }
+
+  .gameplay-desc {
+    font-size: clamp(10px, 2.5vw, 12px) !important;
+    text-align: center !important;
+  }
+
+  .gameplay-text-overlay {
+    top: -8px !important;
+    width: 90% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    left: 53% !important;
+    transform: translateX(-50%) !important;
+    padding: 8px 12px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+
+  .carousel-btn {
+    transform: translateY(-50%) scale(0.8) !important;
+  }
+  .carousel-btn.btn-prev {
+    left: -20px;
+  }
+  .carousel-btn.btn-next {
+    right: -20px;
+  }
+
+  .section-board-title {
+    font-size: 24px;
+    margin-top: -10px;
+  }
+  .carousel-card.prev {
+    transform: translateX(-20px) scale(0.85);
+    margin-top: -20px;
+  }
+  .carousel-card.next {
+    transform: translateX(20px) scale(0.85);
+    margin-top: -20px;
+  }
+  .gameplay-title {
+    font-size: clamp(12px, 3.8vw, 16px) !important;
+    text-align: center !important;
+  }
+  .gameplay-desc {
+    font-size: clamp(9px, 5vw, 10px) !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+  }
+  .gameplay-text-overlay {
+    width: 95% !important;
+    padding: 8px 10px !important;
+  }
+
+  .carousel-card.active {
+    margin-top: -30px !important;
+  }
+  .gameplay-paper-wrapper {
+    margin-top: -20px;
+  }
+}
+
+.mobile-only {
+  display: none;
+}
+
+/* MACBOOK & FLUID DESKTOP RESPONSIVE SECTION*/
+@media screen and (min-width: 1025px) {
+  .container {
+    width: 80%;
+    display: flex;
+  }
+
+  .section-art {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    min-height: auto;
+    max-height: none; /* Prevents viewport height caps from shifting artwork */
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+
+  .hero-chick-gif {
+    position: absolute;
+    bottom: 7%; /* Keeps feet anchored to tile seam on PC & Mac */
+    left: 11%;
+    width: 22%;
+    max-width: 390px;
+    min-width: 200px;
+    height: auto;
+    transform: none;
+  }
+
+  .hero-abt-logo {
+    width: 60%;
+    max-width: 500px;
+    top: 35%;
+  }
+
+  /* Floor & Board Container scaling */
+  .table-board-unit {
+    max-width: 920px;
+  }
+
+  .section-board-title {
+    font-size: 48px;
+    margin-bottom: 8px;
+  }
+
+  .red-video-container {
+    width: 65%;
+    max-width: 540px;
+    margin-top: 10px;
+  }
+
+  /* Middle Papers & Polaroids Layout scaling */
+  .papers-layout-wrapper {
+    max-width: 760px;
+    gap: 20px;
+  }
+
+  .paper-short-img {
+    height: 290px;
+  }
+
+  .paper-long-img {
+    height: 380px;
+  }
+
+  .paper-heading {
+    font-size: 25px;
+  }
+
+  .paper-text {
+    font-size: 12.5px;
+    line-height: 1.35;
+  }
+
+  .overlay-left,
+  .overlay-right {
+    padding: 24px 24px 12px 36px;
+  }
+
+  .polaroids-row img {
+    height: 180px;
+  }
+
+  .polaroids-row {
+    z-index: 15;
+  }
+
+  .sticker-paopao,
+  .sticker-chichi,
+  .sticker-ningning {
+    width: 120px;
+  }
+  .sticker-paopao {
+    left: -50px;
+  }
+  .sticker-chichi {
+    right: -65px;
+    top: 20px;
+  }
+
+  .sticker-ningning {
+    right: -62px;
+  }
+
+  /* Core Gameplay Carousel scaling */
+  .gameplay-carousel-container {
+    max-width: 760px;
+  }
+
+  .carousel-cards-stage {
+    height: 220px;
+  }
+
+  .carousel-card {
+    max-width: 320px;
+  }
+
+  .carousel-card.prev {
+    transform: translateX(-190px) scale(0.95);
+  }
+
+  .carousel-card.next {
+    transform: translateX(190px) scale(0.95);
+  }
+
+  .carousel-btn.btn-prev {
+    left: 80px;
+  }
+
+  .carousel-btn.btn-next {
+    right: 80px;
+  }
+
+  .arrow-img {
+    width: 75px;
+  }
+
+  .gameplay-paper-wrapper {
+    max-width: 420px;
+  }
+
+  .gameplay-title {
+    font-size: 30px;
+  }
+
+  .gameplay-desc {
+    font-size: 11.5px;
+  }
+}
+
+/* NAVBAR: laptop-range scaling (matches about/art/devs pages) */
+@media screen and (min-width: 1025px) and (max-width: 1366px),
+  screen and (width: 1280px) and (height: 800px) {
+  .navbar {
+    max-width: 1150px;
+    margin-top: 2.5vh;
+  }
+
+  .nav-links {
+    gap: 48px;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+
+  .btn-download span {
+    font-size: 22px;
+    padding: 5px 20px;
+  }
+}

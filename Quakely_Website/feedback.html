@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">    <title>Feedback - Quakely</title>
+    <link rel="icon" type="image/png" href="Q LOGO 2.png" />    
+    
+        <meta
+      property="og:title"
+      content="Quakely - Help Us Make The Game Better!"
+    />
+    <meta
+      property="og:image"
+      content="https://quakelywebsite.vercel.app/Home%20Assets/HOME%20FULL%20ART%202.webp"
+    />
+    <meta
+      property="og:url"
+      content="https://quakelywebsite.vercel.app/feedback.html"
+    />
+    <meta property="og:type" content="website" />
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles/feedback.css" rel="stylesheet" />
+    <style>
+      /* Nav logo + links hover */
+      .nav-logo {
+        display: inline-block;
+        transition: translate 0.25s ease, filter 0.25s ease;
+      }
+
+      .nav-logo:hover {
+        translate: 0 -2px;
+        filter: brightness(1.08) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
+      }
+
+      .nav-links a {
+        display: inline-block;
+        transition: translate 0.2s ease, filter 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        translate: 0 -2px;
+        filter: brightness(1.15);
+      }
+
+      .btn-download {
+        display: inline-block;
+        transition: translate 0.2s ease, filter 0.2s ease;
+      }
+
+      .btn-download:hover {
+        translate: 0 -3px;
+        filter: brightness(1.1);
+      }
+
+      /* Feedback sign hover */
+      .feedback-sign-wrapper {
+        transition: translate 0.25s ease, filter 0.25s ease;
+      }
+
+      .feedback-sign-wrapper:hover {
+        translate: 0 -4px;
+        filter: brightness(1.06) drop-shadow(0 8px 18px rgba(0, 0, 0, 0.2));
+      }
+
+      /* Answer Survey button hover */
+      .btn-answer-survey {
+        display: inline-block;
+        transition: translate 0.2s ease, filter 0.2s ease;
+      }
+
+      .btn-answer-survey:hover {
+        translate: 0 -3px;
+        filter: brightness(1.15);
+      }
+
+      .btn-answer-survey:active {
+        translate: 0 0;
+        filter: brightness(0.95);
+      }
+
+      /* About the Evaluation button hover */
+      .btn-about-eval {
+        transition: translate 0.2s ease, filter 0.2s ease;
+      }
+
+      .btn-about-eval:hover {
+        translate: 0 -3px;
+        filter: brightness(1.1);
+      }
+
+      /* Modal close button hover */
+      .modal-close-btn {
+        transition: translate 0.2s ease, filter 0.2s ease;
+      }
+
+      .modal-close-btn:hover {
+        translate: 0 -2px;
+        filter: brightness(1.3);
+      }
+
+      /* Contact icons hover */
+      .contact-icon-circle {
+        transition: translate 0.2s ease, filter 0.2s ease;
+      }
+
+      .contact-icon-circle:hover {
+        translate: 0 -3px;
+        filter: brightness(1.1) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div class="nav-container">
+        <header class="navbar">
+          <a class="nav-logo" href="index.html">
+            <img
+              alt="Quakely Logo"
+              height="356"
+              src="Home Assets/Quakely Primary Logo.webp"
+              width="2000"
+            />
+          </a>
+          <button id="resp-nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+          <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT QUAKELY</a></li>
+            <li><a href="devs.html">THE DEVELOPERS</a></li>
+            <li><a href="art.html">ART</a></li>
+            <li><a class="active" href="feedback.html">FEEDBACK</a></li>
+          </ul>
+          <a class="btn-download" href="download.html">
+            <span>DOWNLOAD</span>
+          </a>
+        </header>
+      </div>
+      <main class="section-feedback-main">
+        <section class="feedback-top-scene">
+          <div class="feedback-sign-wrapper">
+            <img
+              alt="Share Your Feedback"
+              class="feedback-sign-img"
+              height="2225"
+              loading="lazy"
+              src="Feedback Assets/FEEDBACK SIGN.webp"
+              width="2747"
+            />
+          </div>
+        </section>
+        <section class="feedback-road-scene">
+          <div class="feedback-road-content">
+            <div class="content-block">
+              <h2>HELP US IMPROVE QUAKELY</h2>
+              <p>Thank you for taking the time to evaluate Quakely!</p>
+              <p>
+                Your feedback will help us assess the application's software
+                quality and instructional suitability as a supplementary
+                earthquake preparedness learning tool.
+              </p>
+            </div>
+            <div class="content-block">
+              <h2>WHO CAN PROVIDE FEEDBACK?</h2>
+              <p>
+                The evaluation is intended for selected Grade 4–6 Class Advisers
+                and the SDRMM/DRRM Coordinator of Dr. A. Albert Elementary
+                School.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="feedback-road-scene section-evaluated">
+          <div class="feedback-road-content">
+            <div class="content-block">
+              <h2>WHAT WILL BE EVALUATED?</h2>
+              <ul>
+                <li>
+                  <strong>Functional Suitability:</strong> Does the application
+                  provide the intended functions and activities?
+                </li>
+                <li>
+                  <strong>Performance Efficiency:</strong> Does the application
+                  perform smoothly and respond appropriately?
+                </li>
+                <li>
+                  <strong>Interaction Capability:</strong> Are the controls,
+                  navigation, and interactive elements easy to understand and
+                  use?
+                </li>
+                <li>
+                  <strong>Instructional Suitability:</strong> Are the content,
+                  activities, and instructions appropriate for the intended
+                  educational context?
+                </li>
+              </ul>
+              <p class="sub-lead">
+                The first three areas are the selected ISO/IEC 25010:2023
+                software quality characteristics used in this study.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="feedback-road-scene section-submit">
+          <div class="feedback-road-content">
+            <div class="content-block">
+              <h2>HOW TO SUBMIT YOUR FEEDBACK</h2>
+              <ol>
+                <li>
+                  <strong>1. PLAY:</strong> Experience the available Quakely
+                  activities.
+                </li>
+                <li>
+                  <strong>2. EVALUATE:</strong> Consider the application's
+                  functionality, performance, interactions, and instructional
+                  content.
+                </li>
+                <li>
+                  <strong>3. SUBMIT:</strong> Complete the evaluation form
+                  below.
+                </li>
+              </ol>
+            </div>
+            <div class="content-block cta-content-block">
+              <h2>READY TO SHARE YOUR FEEDBACK?</h2>
+              <p>Your honest feedback will help us improve Quakely.</p>
+              <a
+                class="btn-answer-survey"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfhSWTNYq4iRe2BgX1VZHH7TyLq57AmI5beFQHdReaB3a554w/viewform?usp=header"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span>ANSWER SURVEY</span>
+              </a>
+              <button class="btn-about-eval" id="openModalBtn" type="button">
+                About the Evaluation
+              </button>
+              <p class="thank-you-text">
+                THANK YOU FOR HELPING US<br />IMPROVE QUAKELY!
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div aria-hidden="true" class="modal-overlay" id="evalModal">
+        <div aria-modal="true" class="modal-box" role="dialog">
+          <button
+            aria-label="Close modal"
+            class="modal-close-btn"
+            id="closeModalBtn"
+            type="button"
+          >
+            ×
+          </button>
+          <h3>About the Evaluation</h3>
+          <p>
+            This evaluation is part of the academic research and system
+            evaluation of
+            <strong>Quakely</strong> by
+            <strong>Team BYTES of National University – Manila</strong>.
+          </p>
+          <p>
+            The study evaluates
+            <strong
+              >Functional Suitability, Performance Efficiency, and Interaction
+              Capability</strong
+            >
+            based on the
+            <strong>ISO/IEC 25010:2023 Product Quality Model</strong>, together
+            with the application's instructional suitability.
+          </p>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-columns">
+            <div class="footer-left">
+              <p>Quakely by BYTES</p>
+              <p>National University - Manila | CCIT</p>
+              <p style="margin-top: 4px">
+                Contact:
+                <a
+                  class="email-link"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=devteam.bytes@gmail.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  devteam.bytes@gmail.com
+                </a>
+              </p>
+              <div class="contact-icons-row">
+                <a
+                  class="contact-icon-circle"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=devteam.bytes@gmail.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="Compose Email in Gmail"
+                >
+                  <img
+                    alt="Email"
+                    height="30"
+                    loading="lazy"
+                    src="Home Assets/EMAIL ICON.webp"
+                    width="30"
+                  />
+                </a>
+                <a
+                  class="contact-icon-circle"
+                  href="tel:+639991867943"
+                  title="Call Us"
+                >
+                  <img
+                    alt="Phone"
+                    height="30"
+                    loading="lazy"
+                    src="Home Assets/PHONE ICON.webp"
+                    width="30"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="footer-right">
+              <p style="padding-bottom: 4px">
+                Disclaimer: An educational capstone project based<br />
+                on PHIVOLCS guidelines. Not an official<br />
+                government emergency tool.
+              </p>
+              <p class="copyright">© 2026 Team BYTES. All rights reserved.</p>
+            </div>
+          </div>
+          <div class="footer-center">
+            <div class="footer-logos">
+              <img
+                alt="Quakely Logo"
+                class="quakely-logo"
+                height="356"
+                src="Home Assets/Quakely Primary Logo.webp"
+                width="2000"
+              />
+              <img
+                alt="BYTES Logo"
+                class="bytes-logo"
+                height="606"
+                src="Home Assets/BYTES logo transp bg.webp"
+                width="2686"
+              />
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      const modal = document.getElementById("evalModal");
+      const openBtn = document.getElementById("openModalBtn");
+      const closeBtn = document.getElementById("closeModalBtn");
+
+      openBtn.addEventListener("click", () => {
+        modal.classList.add("active");
+        modal.setAttribute("aria-hidden", "false");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        modal.classList.remove("active");
+        modal.setAttribute("aria-hidden", "true");
+      });
+
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+          modal.setAttribute("aria-hidden", "true");
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("active")) {
+          modal.classList.remove("active");
+          modal.setAttribute("aria-hidden", "true");
+        }
+      });
+
+      // Responsive Navbar Toggle
+const navToggleBtn = document.getElementById("resp-nav-toggle");
+const navbarEl = document.querySelector(".navbar");
+
+if (navToggleBtn && navbarEl) {
+  navToggleBtn.addEventListener("click", () => {
+    navbarEl.classList.toggle("resp-open");
+    const isExpanded = navbarEl.classList.contains("resp-open");
+    navToggleBtn.setAttribute("aria-expanded", isExpanded);
+  });
+}
+    </script>
+  </body>
+</html>

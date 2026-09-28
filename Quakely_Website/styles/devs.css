@@ -1,0 +1,1032 @@
+:root {
+  --primary-yellow: #ffd200;
+  --text-brown: #4a2810;
+  --nav-bg: #fffaed;
+  --nav-border: #91532b;
+  --btn-orange-border: #f1b36a;
+  --paper-cream: #fdfbf3;
+  --paper-line: #e3e1d6;
+  --card-green-1: #b6e05a;
+  --card-green-2: #5c8f2f;
+  --card-red-1: #ff6b5b;
+  --card-red-2: #b3231f;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  background-color: #1e5a40;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.page-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+}
+
+/* Single Global Fixed Blackboard Background Layer */
+.global-blackboard-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../Dev Assets/BLACKBOARD BASE.webp");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.blackboard-section {
+  position: relative;
+  width: 100%;
+  height: 830px;
+  min-height: 830px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent !important;
+  z-index: 2;
+}
+
+.blackboard-section:not(.section-1) {
+  margin-top: -25px;
+}
+
+.section-1 {
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.section-2 {
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.section-3,
+.section-4 {
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: inherit;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* NAVBAR */
+.nav-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 24px 0 24px;
+  z-index: 50;
+}
+
+.navbar {
+  position: relative;
+  width: 100%;
+  max-width: 1380px;
+  margin-top: 3vh;
+  height: 48px;
+  background-color: var(--nav-bg);
+  border: 3px solid var(--text-brown);
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+.nav-logo {
+  position: absolute;
+  left: -22px;
+  top: 50%;
+  transform: translateY(-45%);
+  display: flex;
+  align-items: center;
+  z-index: 12;
+}
+
+.nav-logo img {
+  height: 35px;
+  width: auto;
+  display: block;
+  pointer-events: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 85px;
+  margin: 0 auto;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-brown);
+  font-family: "Luckiest Guy", cursive;
+  font-size: 20px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+}
+
+.nav-links a.active {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+
+/* Invisible spacer to match the Index/About nav-link centering
+   (those pages include the download button as an extra item inside
+   .nav-links, which shifts the visible links left of center by one
+   gap-width; this reproduces that without touching any markup) */
+.nav-links::after {
+  content: "";
+}
+
+/* Download Button */
+.btn-download {
+  position: absolute;
+  right: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 12;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: var(--btn-orange-border);
+  border: 2.5px solid var(--text-brown);
+  border-radius: 8px;
+  padding: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-download:hover,
+.btn-download:hover span {
+  opacity: 1 !important;
+  filter: brightness(1.08);
+}
+
+.btn-download span {
+  display: block;
+  background: radial-gradient(
+    ellipse at center,
+    #3ea383 0%,
+    #2c8065 60%,
+    #165541 100%
+  );
+  border: 1.5px solid #144937;
+  border-radius: 6px;
+  padding: 6px 26px;
+  color: #ffffff;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 26px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 0px rgba(0, 0, 0, 0.45);
+}
+
+.btn-download:active {
+  transform: translateY(calc(-50% + 2px));
+}
+
+.hero-logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  transform: translate(0px, -60px);
+}
+
+.hero-logo-wrap img {
+  width: 580px;
+  max-width: 85vw;
+  height: auto;
+  filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.45));
+}
+
+.bytes-logo-wrap {
+  text-align: center;
+  margin-bottom: 25px;
+  transform: translateY(-10px);
+}
+
+.bytes-logo-wrap img {
+  width: 480px;
+  height: auto;
+  max-width: 70vw;
+  margin: 0 auto;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.35));
+}
+
+.intro-inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 0 30px;
+}
+
+.sticky-note {
+  position: relative;
+  background-image: url("../Dev Assets/PAPER WITH PIN.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.45));
+  width: 440px;
+  height: 490px;
+  padding: 70px 45px 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sticky-note p {
+  margin-top: -12px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.75;
+  color: #614124;
+}
+
+.team-polaroids-container {
+  position: relative;
+  width: 580px;
+  height: 500px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.polaroid-back,
+.polaroid-front {
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.polaroid-back:hover,
+.polaroid-front:hover {
+  transform: rotate(0deg) scale(1.08) translateY(-10px);
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6));
+  z-index: 10;
+}
+
+.polaroid-back {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  width: 380px;
+  transform: rotate(-3deg);
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.5));
+  z-index: 1;
+}
+
+.polaroid-back img.polaroid-img,
+.polaroid-front img.polaroid-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+}
+
+.polaroid-front {
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  width: 420px;
+  transform: rotate(3deg);
+  filter: drop-shadow(0 16px 26px rgba(0, 0, 0, 0.55));
+  z-index: 3;
+}
+
+.polaroid-back .pin {
+  top: 8px;
+  left: 47%;
+  transform: translateX(-50%);
+}
+
+.polaroid-front .pin {
+  top: 8px;
+  left: 57%;
+  transform: translateX(-50%);
+}
+
+.dev-collage-container {
+  position: relative;
+  width: 1000px;
+  height: 560px;
+  margin: 0 auto;
+}
+
+.dev-item {
+  position: absolute;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    filter 0.3s ease;
+}
+
+.dev-item.id-card {
+  width: 575px;
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.45));
+}
+
+.dev-item.id-card img.id-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.dev-item.id-card .pin {
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+}
+
+.dev-item.paper-bio {
+  width: 325px;
+  height: 320px;
+  background-image: url("../Dev Assets/PAPER.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  padding: 28px 20px 24px;
+  color: var(--text-brown);
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.35));
+}
+
+.dev-item.mascot-sticker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dev-item.mascot-sticker .sticker-img {
+  width: 150px;
+  height: auto;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.45));
+}
+
+.pin {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.45));
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Specific Dev Items Positioning */
+.agatha-id,
+.louren-id {
+  top: -50px;
+  left: -130px;
+  width: 575px;
+  transform: rotate(-8deg);
+  z-index: 4;
+}
+
+.cheyenne-id,
+.nic-id {
+  bottom: -5px;
+  left: 585px;
+  width: 575px;
+  transform: rotate(9deg);
+  z-index: 5;
+}
+
+.agatha-sticker {
+  top: -120px;
+  left: 220px;
+  transform: rotate(-8deg);
+  z-index: 6;
+}
+.dev-item.mascot-sticker.agatha-sticker .sticker-img {
+  width: 450px;
+  transform: translateY(-80px);
+}
+
+.cheyenne-sticker {
+  bottom: 60px;
+  left: 520px;
+  transform: rotate(9deg);
+  z-index: 7;
+}
+.dev-item.mascot-sticker.cheyenne-sticker .sticker-img {
+  width: 180px;
+  transform: translateY(20px);
+}
+
+.louren-sticker {
+  top: 5px;
+  left: 340px;
+  transform: rotate(-8deg);
+  z-index: 6;
+}
+.dev-item.mascot-sticker.louren-sticker .sticker-img {
+  width: 220px;
+  transform: translateY(-80px);
+}
+
+.nic-sticker {
+  bottom: 60px;
+  left: 470px;
+  transform: rotate(9deg);
+  z-index: 7;
+}
+.dev-item.mascot-sticker.nic-sticker .sticker-img {
+  width: 280px;
+  transform: translateY(20px);
+}
+
+.dev-item.id-card:hover {
+  filter: d drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6));
+  z-index: 15 !important;
+}
+
+.agatha-id:hover,
+.louren-id:hover {
+  transform: rotate(8deg) scale(1.05) translateY(-10px);
+}
+.cheyenne-id:hover,
+.nic-id:hover {
+  transform: rotate(-6deg) scale(1.05) translateY(-10px);
+}
+
+.agatha-bio,
+.louren-bio {
+  top: 270px;
+  left: 170px;
+  transform: rotate(0deg);
+  z-index: 2;
+}
+
+.cheyenne-bio,
+.nic-bio {
+  bottom: 320px;
+  left: 560px;
+  transform: rotate(0deg);
+  z-index: 2;
+}
+
+.dev-item.paper-bio h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  text-align: center;
+  color: var(--text-brown);
+}
+.agatha-bio h3,
+.louren-bio h3 {
+  margin-top: 55px;
+}
+.cheyenne-bio h3,
+.nic-bio h3 {
+  margin-bottom: 6px;
+}
+
+.dev-item.paper-bio ul {
+  margin: 15px 0 6px 40px;
+  padding: 0;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-brown);
+}
+
+.dev-item.paper-bio p {
+  margin-top: 15px;
+  font-size: 11.5px;
+  line-height: 1.45;
+  text-align: center;
+  font-weight: 500;
+  color: var(--text-brown);
+}
+
+/* FOOTER */
+.footer {
+  width: 100%;
+  background-color: #705740;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 33px 0 12px 0;
+  z-index: 5;
+  position: relative;
+}
+
+.footer-inner {
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 40px;
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  line-height: 1.4;
+  opacity: 0.95;
+}
+
+.footer-left p,
+.footer-right p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.email-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+.contact-icons-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.contact-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.contact-icon-circle:hover {
+  transform: scale(1.1) translateY(-3px);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+.contact-icon-circle img {
+  width: 26px;
+  height: 26px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.footer-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.footer-logos {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.footer-logos img.quakely-logo {
+  height: 38px;
+  width: auto;
+}
+.footer-logos img.bytes-logo {
+  height: 20px;
+  width: auto;
+}
+
+.copyright {
+  display: block;
+  text-align: right;
+  margin-top: 14px;
+  font-size: 12px;
+  opacity: 0.95;
+}
+
+#resp-nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: var(--text-brown);
+  cursor: pointer;
+  padding: 0 10px;
+  position: absolute;
+  right: 15px;
+  min-width: 48px;
+  min-height: 48px;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 30px;
+  }
+  .nav-links a {
+    font-size: 18px;
+  }
+  .btn-download span {
+    font-size: 20px;
+    padding: 5px 15px;
+  }
+}
+
+@media (max-width: 990px) {
+  .intro-inner {
+    flex-direction: column;
+    gap: 50px;
+    padding-bottom: 30px;
+  }
+  .team-polaroids-container {
+    transform: scale(0.65);
+    transform-origin: top center;
+    margin-top: -30px;
+    margin-bottom: -115px;
+  }
+  .blackboard-section.section-3,
+  .blackboard-section.section-4 {
+    height: auto;
+    min-height: auto;
+    padding: 80px 0;
+  }
+  .dev-collage-container {
+    left: 50%;
+    transform: translateX(-50%) scale(0.85);
+    transform-origin: top center;
+    margin-bottom: -84px;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    gap: 15px;
+  }
+  .nav-links a {
+    font-size: 14px;
+  }
+  .nav-logo {
+    left: 10px;
+  }
+  .nav-logo img {
+    height: 28px;
+  }
+  .btn-download {
+    right: 10px;
+  }
+  .btn-download span {
+    font-size: 14px;
+    padding: 4px 10px;
+  }
+  .footer-columns {
+    flex-direction: row;
+    text-align: left;
+    gap: 30px;
+  }
+  .contact-icons-row {
+    justify-content: flex-start;
+  }
+}
+
+/* MOBILE ACCORDION (Updated for Burger Tab Download Button) */
+@media (max-width: 768px) {
+  .navbar {
+    position: relative !important;
+    width: 90% !important;
+    margin: 10px auto 0 auto !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 2px 12px !important;
+    height: auto !important;
+    min-height: 36px !important;
+    z-index: 100 !important;
+    border-width: 2px !important;
+  }
+
+  .nav-logo {
+    position: static !important;
+    transform: none !important;
+    margin-left: -20px !important;
+  }
+  .nav-logo img {
+    height: 22px !important;
+  }
+
+  #resp-nav-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: static !important;
+  }
+
+  /* Hide elements by default on mobile */
+  .nav-links,
+  .btn-download {
+    display: none !important;
+  }
+
+  /* Keep mobile accordion untouched: no phantom spacer here */
+  .nav-links::after {
+    content: none;
+  }
+
+  /* When the burger menu is open */
+  .navbar.resp-open {
+    padding-bottom: 20px !important;
+  }
+
+  .navbar.resp-open .nav-links {
+    display: flex !important;
+    width: 100% !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 15px !important;
+    margin-top: 15px !important;
+    order: 3 !important;
+  }
+
+  .navbar.resp-open .nav-links a {
+    font-size: 18px !important;
+  }
+
+  /* Bring the download button inside the expanded burger container */
+  .navbar.resp-open .btn-download {
+    display: inline-flex !important;
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    transform: none !important;
+    margin: 15px auto 0 auto !important;
+    order: 4 !important;
+  }
+
+  .navbar.resp-open .btn-download span {
+    font-size: 20px !important;
+    padding: 6px 20px !important;
+  }
+}
+@media (max-width: 600px) {
+  .footer-columns {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  .footer-left,
+  .footer-right {
+    text-align: center;
+  }
+  .contact-icons-row {
+    justify-content: center;
+  }
+  .copyright {
+    text-align: center;
+    margin-top: 0;
+  }
+  .footer-center {
+    margin-top: 20px;
+  }
+  .footer-inner {
+    padding: 0 20px;
+  }
+  .mascot-sticker {
+    display: none !important;
+  }
+  .hero-logo-wrap img {
+    width: 300px;
+  }
+  .bytes-logo-wrap img {
+    width: 280px;
+  }
+  .blackboard-section {
+    height: auto;
+    min-height: 100vh;
+    padding: 60px 0 40px;
+  }
+  .section-1 {
+    min-height: 40vh;
+    padding-bottom: 0;
+    justify-content: flex-start;
+    padding-top: 180px;
+  }
+  .sticky-note {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    padding: 50px 35px 35px;
+  }
+  .sticky-note p {
+    font-size: 16px;
+  }
+  .team-polaroids-container {
+    transform: scale(0.65);
+    margin-bottom: -175px;
+  }
+  .dev-collage-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 1350px !important;
+    left: 50%;
+    transform: translateX(-50%) scale(0.72);
+    margin-bottom: -378px;
+  }
+
+  /* Centered Mobile Positioning Adjustments for Devs */
+  .agatha-id,
+  .louren-id,
+  .cheyenne-id,
+  .nic-id {
+    left: 15% !important;
+    width: 440px !important;
+  }
+
+  .agatha-bio,
+  .louren-bio,
+  .cheyenne-bio,
+  .nic-bio {
+    left: 25% !important;
+    width: 320px !important;
+  }
+
+  .agatha-id {
+    top: -30px !important;
+  }
+  .agatha-bio {
+    top: 290px !important;
+  }
+
+  .louren-id {
+    top: -150px !important;
+  }
+  .louren-bio {
+    top: 150px !important;
+  }
+
+  .cheyenne-id {
+    top: 50% !important;
+  }
+  .cheyenne-bio {
+    top: 74% !important;
+  }
+
+  .nic-id {
+    top: 40% !important;
+  }
+  .nic-bio {
+    top: 63% !important;
+  }
+
+  .dev-item.paper-bio h3 {
+    font-size: 26px !important;
+    margin-top: 50px !important;
+  }
+  .dev-item.paper-bio ul {
+    font-size: 13px !important;
+    margin-left: 20px !important;
+    margin-top: 10px !important;
+  }
+  .dev-item.paper-bio p {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    margin-top: 10px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .team-polaroids-container {
+    transform: scale(0.58);
+    margin-bottom: -210px;
+  }
+  .dev-collage-container {
+    transform: translateX(-50%) scale(0.65);
+    margin-bottom: -472.5px;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1366px),
+  screen and (width: 1280px) and (height: 800px) {
+  .navbar {
+    max-width: 1150px;
+    margin-top: 2.5vh;
+  }
+  .nav-links {
+    gap: 48px;
+  }
+  .nav-links a {
+    font-size: 18px;
+  }
+  .btn-download span {
+    font-size: 22px;
+    padding: 5px 20px;
+  }
+  .blackboard-section {
+    height: 720px;
+    min-height: 720px;
+  }
+  .hero-logo-wrap img {
+    width: 480px;
+  }
+  .bytes-logo-wrap img {
+    width: 400px;
+  }
+  .intro-inner {
+    max-width: 1050px;
+    gap: 20px;
+    padding: 0 20px;
+  }
+  .sticky-note {
+    width: 380px;
+    height: 420px;
+    padding: 55px 35px 35px;
+  }
+  .sticky-note p {
+    font-size: 19px;
+  }
+  .team-polaroids-container {
+    width: 500px;
+    height: 440px;
+  }
+  .polaroid-back {
+    width: 330px;
+  }
+  .polaroid-front {
+    width: 360px;
+  }
+  .dev-collage-container {
+    transform: scale(0.9);
+    transform-origin: center center;
+  }
+}

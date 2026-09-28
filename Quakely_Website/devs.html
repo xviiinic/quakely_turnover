@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>The Developers — Quakely</title>
+    <link rel="icon" type="image/png" href="Q LOGO 2.png" />
+
+    <meta property="og:title" content="Quakely - Meet the Developers!" />
+    <meta
+      property="og:image"
+      content="https://quakelywebsite.vercel.app/Home%20Assets/HOME%20FULL%20ART%202.webp"
+    />
+    <meta
+      property="og:url"
+      content="https://quakelywebsite.vercel.app/devs.html"
+    />
+    <meta property="og:type" content="website" />
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles/devs.css" rel="stylesheet" />
+    <style>
+      /* Nav logo + links hover */
+      .nav-logo {
+        display: inline-block;
+        transition:
+          translate 0.25s ease,
+          filter 0.25s ease;
+      }
+
+      .nav-logo:hover {
+        translate: 0 -2px;
+        filter: brightness(1.08) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
+      }
+
+      .nav-links a {
+        display: inline-block;
+        transition:
+          translate 0.2s ease,
+          filter 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        translate: 0 -2px;
+        filter: brightness(1.15);
+      }
+
+      .btn-download {
+        display: inline-block;
+        transition:
+          translate 0.2s ease,
+          filter 0.2s ease;
+      }
+
+      .btn-download:hover {
+        translate: 0 -3px;
+        filter: brightness(1.1);
+      }
+
+      /* Team polaroids hover */
+      .polaroid-back,
+      .polaroid-front {
+        transition:
+          translate 0.25s ease,
+          filter 0.25s ease;
+        cursor: pointer;
+      }
+
+      .polaroid-back:hover,
+      .polaroid-front:hover {
+        translate: 0 -5px;
+        filter: brightness(1.06) drop-shadow(0 10px 18px rgba(0, 0, 0, 0.2));
+      }
+
+      /* Contact icons hover */
+      .contact-icon-circle {
+        transition:
+          translate 0.2s ease,
+          filter 0.2s ease;
+      }
+
+      .contact-icon-circle:hover {
+        translate: 0 -3px;
+        filter: brightness(1.1) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div class="global-blackboard-bg"></div>
+      <div class="nav-container">
+        <header class="navbar">
+          <a class="nav-logo" href="index.html">
+            <img
+              alt="Quakely Logo"
+              height="356"
+              src="Home Assets/Quakely Primary Logo.webp"
+              width="2000"
+            />
+          </a>
+          <button aria-expanded="false" aria-label="Menu" id="resp-nav-toggle">
+            ☰
+          </button>
+          <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT QUAKELY</a></li>
+            <li><a class="active" href="devs.html">THE DEVELOPERS</a></li>
+            <li><a href="art.html">ART</a></li>
+            <li><a href="feedback.html">FEEDBACK</a></li>
+          </ul>
+          <a class="btn-download" href="download.html">
+            <span>DOWNLOAD</span>
+          </a>
+        </header>
+      </div>
+      <main>
+        <section class="blackboard-section section-1" id="developers">
+          <div class="hero-logo-wrap">
+            <img
+              alt="The Developers"
+              height="293"
+              loading="lazy"
+              src="Dev Assets/DEVS LOGO.webp"
+              width="658"
+            />
+          </div>
+        </section>
+        <section class="blackboard-section section-2">
+          <div class="bytes-logo-wrap">
+            <img
+              alt="BYTES Logo"
+              height="606"
+              loading="lazy"
+              src="Dev Assets/BYTES logo transp bg.webp"
+              width="2686"
+            />
+          </div>
+          <div class="intro-inner">
+            <div class="sticky-note">
+              <p>
+                We are a team of passionate developers, artists, and researchers
+                from National University - Manila, taking up our Bachelor of
+                Science in Information Technology with a Specialization in
+                Multimedia Arts and Animation. Quakely is our Capstone Project!
+              </p>
+            </div>
+            <div class="team-polaroids-container">
+              <div class="polaroid-back">
+                <img
+                  alt="Pin"
+                  class="pin"
+                  height="59"
+                  loading="lazy"
+                  src="Dev Assets/PIN.webp"
+                  width="57"
+                />
+                <img
+                  alt="Team Defense Photo"
+                  class="polaroid-img"
+                  height="8306"
+                  loading="lazy"
+                  src="Dev Assets/TEAM 2.webp"
+                  width="9781"
+                />
+              </div>
+              <div class="polaroid-front">
+                <img
+                  alt="Pin"
+                  class="pin"
+                  height="59"
+                  loading="lazy"
+                  src="Dev Assets/PIN.webp"
+                  width="57"
+                />
+                <img
+                  alt="Team Photo"
+                  class="polaroid-img"
+                  height="8081"
+                  loading="lazy"
+                  src="Dev Assets/TEAM.webp"
+                  width="9653"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- SECTION 3: AGATHA & CHEYENNE -->
+        <section class="blackboard-section section-3">
+          <div class="dev-collage-container">
+            <!-- Agatha ID -->
+            <div class="dev-item id-card agatha-id">
+              <img
+                alt="Pin"
+                class="pin"
+                height="59"
+                loading="lazy"
+                src="Dev Assets/PIN.webp"
+                width="57"
+              />
+              <img
+                alt="Agatha ID"
+                class="id-img"
+                height="1640"
+                loading="lazy"
+                src="Dev Assets/ID ATHA.webp"
+                width="2360"
+              />
+            </div>
+            <!-- Agatha Mascot -->
+            <div class="dev-item mascot-sticker agatha-sticker">
+              <img
+                alt="Paopao Mascot"
+                class="sticker-img"
+                height="3684"
+                loading="lazy"
+                src="Dev Assets/PAOPAO FULL STICKER.webp"
+                width="3009"
+              />
+            </div>
+            <!-- Agatha Bio Paper -->
+            <div class="dev-item paper-bio agatha-bio">
+              <h3>Agatha Filomeno</h3>
+              <ul>
+                <li>Project Manager</li>
+                <li>Asset & UI Designer</li>
+                <li>Audio/SFX Editor</li>
+                <li>Documentation Lead</li>
+              </ul>
+              <p>
+                Led the project timeline and documentation while designing the
+                game interface, visuals, backgrounds, and edited the game's
+                audio.
+              </p>
+            </div>
+            <!-- Cheyenne Bio Paper -->
+            <div class="dev-item paper-bio cheyenne-bio">
+              <h3>Cheyenne Badiong</h3>
+              <ul>
+                <li>Lead Game Developer (Unity)</li>
+                <li>Back-End Logic</li>
+                <li>Database Manager</li>
+              </ul>
+              <p>
+                Built the core game architecture in Unity, managed the database
+                and local data storage, and seamlessly integrated the Live2D
+                animations and interactive gameplay mechanics.
+              </p>
+            </div>
+            <!-- Cheyenne Mascot -->
+            <div class="dev-item mascot-sticker cheyenne-sticker">
+              <img
+                alt="Goat Mascot"
+                class="sticker-img"
+                height="2788"
+                loading="lazy"
+                src="Dev Assets/GOAT FULL STICKER.webp"
+                width="1313"
+              />
+            </div>
+            <!-- Cheyenne ID -->
+            <div class="dev-item id-card cheyenne-id">
+              <img
+                alt="Pin"
+                class="pin"
+                height="59"
+                loading="lazy"
+                src="Dev Assets/PIN.webp"
+                width="57"
+              />
+              <img
+                alt="Cheyenne ID"
+                class="id-img"
+                height="1640"
+                loading="lazy"
+                src="Dev Assets/ID GELA.webp"
+                width="2360"
+              />
+            </div>
+          </div>
+        </section>
+        <!-- SECTION 4: LOUREN & NIC -->
+        <section class="blackboard-section section-4">
+          <div class="dev-collage-container">
+            <!-- Louren ID -->
+            <div class="dev-item id-card louren-id">
+              <img
+                alt="Pin"
+                class="pin"
+                height="59"
+                loading="lazy"
+                src="Dev Assets/PIN.webp"
+                width="57"
+              />
+              <img
+                alt="Louren ID"
+                class="id-img"
+                height="1640"
+                loading="lazy"
+                src="Dev Assets/ID LOUREN.webp"
+                width="2360"
+              />
+            </div>
+            <!-- Louren Mascot -->
+            <div class="dev-item mascot-sticker louren-sticker">
+              <img
+                alt="Pig Mascot"
+                class="sticker-img"
+                height="2771"
+                loading="lazy"
+                src="Dev Assets/PIG FULL STICKER.webp"
+                width="1634"
+              />
+            </div>
+            <!-- Louren Bio Paper -->
+            <div class="dev-item paper-bio louren-bio">
+              <h3>Louren Guades</h3>
+              <ul>
+                <li>Background Artist</li>
+                <li>Lead Researcher & Game Designer</li>
+                <li>QA Lead</li>
+              </ul>
+              <p>
+                Designed the chapter progression and achievement systems, wrote
+                the game's narrative, led the comprehensive capstone research,
+                and spearheaded Quality Assurance (QA) testing.
+              </p>
+            </div>
+            <!-- Nic Bio Paper -->
+            <div class="dev-item paper-bio nic-bio">
+              <h3>Nicole Recinto</h3>
+              <ul>
+                <li>Main Artist</li>
+                <li>Live2D Animator</li>
+                <li>The Voice of Chichi!</li>
+              </ul>
+              <p>
+                Conceptualized the animal mascots and brought them to life using
+                Live2D Cubism, ensuring smooth, expressive, and child-friendly
+                animations—and even provided the official voice for Chichi!
+              </p>
+            </div>
+            <!-- Nic Mascot -->
+            <div class="dev-item mascot-sticker nic-sticker">
+              <img
+                alt="Chichi Mascot"
+                class="sticker-img"
+                height="2659"
+                loading="lazy"
+                src="Dev Assets/CHICHI FULL STICKER.webp"
+                width="1872"
+              />
+            </div>
+            <!-- Nic ID -->
+            <div class="dev-item id-card nic-id">
+              <img
+                alt="Pin"
+                class="pin"
+                height="59"
+                loading="lazy"
+                src="Dev Assets/PIN.webp"
+                width="57"
+              />
+              <img
+                alt="Nic ID"
+                class="id-img"
+                height="1640"
+                loading="lazy"
+                src="Dev Assets/ID NIC.webp"
+                width="2360"
+              />
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-columns">
+            <div class="footer-left">
+              <p>Quakely by BYTES</p>
+              <p>National University - Manila | CCIT</p>
+              <p style="margin-top: 4px">
+                Contact:
+                <a
+                  class="email-link"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=devteam.bytes@gmail.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  devteam.bytes@gmail.com
+                </a>
+              </p>
+              <div class="contact-icons-row">
+                <a
+                  class="contact-icon-circle"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=devteam.bytes@gmail.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="Compose Email in Gmail"
+                >
+                  <img
+                    alt="Email"
+                    height="30"
+                    loading="lazy"
+                    src="Home Assets/EMAIL ICON.webp"
+                    width="30"
+                  />
+                </a>
+                <a
+                  class="contact-icon-circle"
+                  href="tel:+639991867943"
+                  title="Call Us"
+                >
+                  <img
+                    alt="Phone"
+                    height="30"
+                    loading="lazy"
+                    src="Home Assets/PHONE ICON.webp"
+                    width="30"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="footer-right">
+              <p style="padding-bottom: 4px">
+                Disclaimer: An educational capstone project based<br />
+                on PHIVOLCS guidelines. Not an official<br />
+                government emergency tool.
+              </p>
+              <p class="copyright">© 2026 Team BYTES. All rights reserved.</p>
+            </div>
+          </div>
+          <div class="footer-center">
+            <div class="footer-logos">
+              <img
+                alt="Quakely Logo"
+                class="quakely-logo"
+                height="356"
+                src="Home Assets/Quakely Primary Logo.webp"
+                width="2000"
+              />
+              <img
+                alt="BYTES Logo"
+                class="bytes-logo"
+                height="606"
+                src="Home Assets/BYTES logo transp bg.webp"
+                width="2686"
+              />
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      // Responsive Navbar Toggle
+      document.addEventListener("DOMContentLoaded", () => {
+        const navToggle = document.getElementById("resp-nav-toggle");
+        const navbar = document.querySelector(".navbar");
+
+        if (navToggle) {
+          navToggle.addEventListener("click", () => {
+            const isExpanded =
+              navToggle.getAttribute("aria-expanded") === "true";
+            navToggle.setAttribute("aria-expanded", !isExpanded);
+            navbar.classList.toggle("resp-open");
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

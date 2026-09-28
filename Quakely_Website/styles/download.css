@@ -1,0 +1,1370 @@
+:root {
+  --primary-yellow: #ffd200;
+  --text-brown: #4a2810;
+  --nav-bg: #fffaed;
+  --nav-border: #91532b;
+  --btn-orange-border: #f1b36a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #3b5e14;
+  display: flex;
+  justify-content: center;
+  color: #333;
+  overflow-x: hidden;
+}
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+}
+
+.page-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #4b7a1e;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Accessibility: wraps the page content in a <main> landmark for
+   screen readers/audits without affecting layout — display:contents
+   makes the wrapper itself invisible to the flex layout so the jeep
+   sections still behave as direct flex children of .page-container
+   exactly as before. */
+.content-landmark {
+  display: contents;
+}
+
+.navbar {
+  position: relative;
+  width: calc(100vw - 48px);
+  max-width: 1380px;
+  margin-top: 3vh;
+  margin-bottom: 0px;
+  height: 48px;
+  background-color: var(--nav-bg);
+  border: 3px solid var(--text-brown);
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.nav-logo {
+  position: absolute;
+  left: -22px;
+  top: 50%;
+  transform: translateY(-45%);
+  display: flex;
+  align-items: center;
+  z-index: 12;
+}
+
+.nav-logo img {
+  height: 35px;
+  width: auto;
+  display: block;
+  pointer-events: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 85px;
+  margin: 0 auto;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-brown);
+  font-family: "Luckiest Guy", cursive;
+  font-size: 20px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+}
+
+.nav-links a.active {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+
+/* Invisible spacer to match the Index/About nav-link centering
+   (those pages include the download button as an extra item inside
+   .nav-links, which shifts the visible links left of center by one
+   gap-width; this reproduces that without touching any markup) */
+.nav-links::after {
+  content: "";
+}
+
+.btn-download {
+  position: absolute;
+  right: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 12;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: var(--btn-orange-border);
+  border: 2.5px solid var(--text-brown);
+  border-radius: 8px;
+  padding: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+  transition: transform 0.1s ease;
+}
+
+.btn-download span {
+  display: block;
+  background: radial-gradient(
+    ellipse at center,
+    #3ea383 0%,
+    #2c8065 60%,
+    #165541 100%
+  );
+  border: 1.5px solid #144937;
+  border-radius: 6px;
+  padding: 6px 26px;
+  color: #ffffff;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 26px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 0px rgba(0, 0, 0, 0.45);
+}
+
+.btn-download:active {
+  transform: translateY(calc(-50% + 2px));
+}
+
+/* JEEP SECTION 1: TOP JEEP (JEEP 1.webp) */
+.section-jeep-1 {
+  position: relative;
+  width: 110%;
+  min-height: 850px;
+  padding: 20px 24px 0 24px;
+  background: url("../Download Assets/JEEP 1.webp") no-repeat center top;
+  background-size: 100% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.banner-download {
+  position: relative;
+  width: 60%;
+  max-width: 680px;
+  height: auto;
+  top: 15px;
+  left: 0px;
+  margin-top: 10px;
+  margin-bottom: -10px;
+  transform: translate(0px, -15px);
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+  display: block;
+  z-index: 5;
+}
+
+.banner-system-eval {
+  position: relative;
+  width: 70%;
+  max-width: 580px;
+  height: auto;
+  top: -1px;
+  left: 0px;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  transform: translate(0px, -15px);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
+  display: block;
+  z-index: 5;
+}
+
+.notice-landscape-box {
+  position: relative;
+  width: 51%;
+  max-width: 500px;
+  height: auto;
+  top: -20px;
+  left: 0px;
+  margin-top: -2px;
+  transform: translate(0px, -17px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  overflow: visible;
+  z-index: 5;
+}
+
+.notice-landscape-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.4));
+}
+
+.notice-landscape-text {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 12px 30px 10px 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(0.75rem, 0.85vw, 0.78rem);
+  font-weight: 600;
+  line-height: 1.5;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  box-sizing: border-box;
+}
+
+/* JEEP SECTION 2: MIDDLE JEEP */
+.section-jeep-2 {
+  position: relative;
+  width: 110%;
+  min-height: 850px;
+  padding: 40px 20px;
+  background: url("../Download Assets/JEEP 2.webp") no-repeat center center;
+  background-size: 100% auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  z-index: 2;
+}
+
+/* ABOUT THIS BUILD CARD (above the download card)*/
+.about-build-card {
+  position: relative;
+  background: #ffffff;
+  width: 95%;
+  max-width: 1050px;
+  border-radius: 6px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+  padding: 28px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: #030303;
+  font-family: "Montserrat", sans-serif;
+  z-index: 3;
+  box-sizing: border-box;
+}
+
+.about-build-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #030303;
+}
+
+.about-build-card p strong,
+.about-build-card p b {
+  color: #030303;
+}
+
+/* DOWNLOAD CARD CONTAINER */
+.download-card {
+  position: relative;
+  background: #ffffff;
+  width: 95%;
+  max-width: 1050px;
+  min-height: 380px;
+  border-radius: 6px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+
+.card-header-wrapper {
+  width: 95%;
+  background: transparent;
+  padding: 24px 28px 10px 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Inner Yellow */
+.card-header-inner-pill {
+  width: 100%;
+  background-color: #ffefa8;
+  border-radius: 4px;
+  padding: 14px 20px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.4rem, 2vw, 1.85rem);
+  font-weight: 800;
+  color: #f59e0b;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-body {
+  padding: 24px 40px 36px 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.consent-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.02rem;
+  color: #111827;
+  font-weight: 500;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.consent-group input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #16a34a;
+}
+
+.consent-link,
+.link-btn {
+  color: #111827;
+  text-decoration: underline;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+.consent-link:hover,
+.link-btn:hover {
+  color: #15803d;
+}
+
+/* DOWNLOAD BUTTON */
+.download-btn {
+  background: linear-gradient(180deg, #52a613 0%, #307a0c 60%, #1c5908 100%);
+  color: #ffffff;
+  padding: 14px 38px;
+  border-radius: 16px;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 45%;
+  max-width: 440px;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  transition:
+    background 0.3s ease,
+    transform 0.1s ease,
+    box-shadow 0.2s ease,
+    opacity 0.3s ease;
+}
+
+.download-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+.download-btn:active:not(:disabled) {
+  transform: translateY(2px);
+}
+
+.download-btn span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+/* GRAY STATE */
+.download-btn:disabled {
+  background: #cccccc !important;
+  color: #777777 !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.download-btn:disabled span {
+  color: #888888 !important;
+}
+
+.version-subtext {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  color: #4b5563;
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.quick-links {
+  display: flex;
+  gap: 40px;
+  margin-top: 6px;
+}
+
+.quick-links .link-btn {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+}
+
+/* JEEP SECTION 3: BOTTOM JEEP */
+.section-jeep-3 {
+  position: relative;
+  width: 110%;
+  min-height: 850px;
+  padding: 50px 20px 80px 20px;
+  background: url("../Download Assets/JEEP 3.webp") no-repeat center center;
+  background-size: 100% auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.info-cards-row {
+  display: flex;
+  gap: 28px;
+  width: 100%;
+  max-width: 960px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.portrait-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  overflow: visible;
+  padding: 0;
+}
+
+.portrait-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.5));
+}
+
+.card-inner-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.red-card-title {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 2.1rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  border-bottom: none;
+  padding-bottom: 0;
+  flex-shrink: 0;
+}
+
+.guide-list-wrap {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.guide-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.89rem;
+  line-height: 1.45;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  box-sizing: border-box;
+}
+
+.guide-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.guide-step-title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.guide-step-desc {
+  color: #ffffff;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.guide-step-desc strong,
+.guide-step-desc b {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.guide-step-desc em,
+.guide-step-desc i {
+  font-style: italic;
+}
+
+/* INSTALLATION GUIDE */
+.guide-card {
+  margin-top: 40px;
+  flex: 1.3 1 480px;
+  max-width: 570px;
+  height: 640px;
+}
+
+.guide-card .card-inner-content {
+  padding: 55px 32px 28px 65px;
+}
+
+.guide-card .guide-list {
+  padding: 0;
+}
+
+/* VIDEO TUTORIAL */
+.video-card {
+  margin-top: 40px;
+  flex: 0 0 auto !important;
+  max-width: 420px;
+  height: 640px;
+}
+
+.video-card .card-inner-content {
+  padding: 55px 18px 24px 40px;
+}
+
+.video-card .red-card-title {
+  font-size: 2.1rem;
+}
+
+/* PHONE MOCKUP */
+.phone-mockup {
+  position: relative;
+  background: #000000;
+  border: 8px solid #1c1917;
+  border-radius: 32px;
+  height: 82%;
+  aspect-ratio: 11 / 20;
+  width: auto;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 2px;
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.6),
+    inset 0 0 4px rgba(255, 255, 255, 0.25);
+}
+
+.phone-notch {
+  position: absolute;
+  top: 5px;
+  width: 44px;
+  height: 4px;
+  background: #2b2b2b;
+  border-radius: 4px;
+  z-index: 5;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.phone-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #000000;
+  border-radius: 22px;
+}
+
+/* FOOTER */
+.footer {
+  width: 110%;
+  background-color: #705740;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 33px 0 12px 0;
+  z-index: 5;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer-inner {
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 40px;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.footer p,
+.footer a,
+.footer span,
+.footer-columns,
+.footer-left,
+.footer-right,
+.copyright {
+  font-family: "Montserrat", sans-serif !important;
+  color: #ffffff;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  line-height: 1.4;
+  opacity: 0.95;
+}
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-left p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.email-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.email-link:visited {
+  color: #ffffff;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+.contact-icons-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.contact-icon-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.contact-icon-circle:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
+}
+
+.contact-icon-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.footer-right p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.footer-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.footer-logos {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.footer-logos img.quakely-logo {
+  height: 38px;
+  width: auto;
+}
+
+.footer-logos img.bytes-logo {
+  height: 20px;
+  width: auto;
+}
+
+.copyright {
+  display: block;
+  text-align: right;
+  margin-top: 14px;
+  font-size: 12px;
+  opacity: 0.95;
+  font-weight: 400;
+}
+
+/* MODALS */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.modal-backdrop.active {
+  display: flex;
+}
+
+.modal-box {
+  background: #ffffff;
+  width: 100%;
+  max-width: 650px;
+  max-height: 85vh;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: popIn 0.25s ease-out;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #000000;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #6b7280;
+  font-weight: bold;
+  transition: color 0.15s;
+}
+
+.modal-close-btn:hover {
+  color: #dc2626;
+}
+
+.modal-content {
+  padding: 20px;
+  overflow-y: auto;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #000000;
+}
+
+.modal-content p,
+.modal-content li,
+.modal-content td,
+.modal-content th,
+.modal-content div {
+  color: #000000;
+}
+
+.modal-content ul {
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+
+.modal-content li {
+  margin-bottom: 4px;
+  color: #000000;
+}
+
+.modal-content h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 12px 0 6px;
+}
+
+.req-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.req-table th,
+.req-table td {
+  border: 1px solid #d1d5db;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 0.88rem;
+  color: #000000;
+}
+
+.req-table th {
+  background-color: #f3f4f6;
+  font-weight: normal;
+  color: #000000;
+}
+
+.req-table td:first-child {
+  font-weight: normal;
+  background-color: #f9fafb;
+  width: 35%;
+  color: #000000;
+}
+
+#resp-nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: var(--text-brown);
+  cursor: pointer;
+  padding: 0 10px;
+  position: absolute;
+  right: 15px;
+}
+
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 30px;
+  }
+  .nav-links a {
+    font-size: 18px;
+  }
+  .btn-download span {
+    font-size: 20px;
+    padding: 5px 15px;
+  }
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  /* HEADER & FOOTER */
+  .nav-links {
+    display: flex;
+    gap: 15px;
+    margin: 0 auto;
+  }
+  .nav-links a {
+    font-size: 14px;
+  }
+  .nav-logo {
+    left: 10px;
+    margin-left: -25px;
+  }
+  .nav-logo img {
+    height: 28px;
+  }
+  .btn-download {
+    right: 10px;
+  }
+  .btn-download span {
+    font-size: 14px;
+    padding: 4px 10px;
+  }
+  .navbar.resp-open .nav-links a {
+    font-size: 18px !important;
+  }
+  .navbar.resp-open .btn-download {
+    display: inline-flex !important;
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    transform: none !important;
+    margin: 15px auto 0 auto !important;
+    order: 4 !important;
+  }
+  .navbar.resp-open .btn-download span {
+    font-size: 20px !important;
+    padding: 6px 20px !important;
+  }
+
+  .footer-columns {
+    flex-direction: row;
+    text-align: left;
+    gap: 30px;
+  }
+  .contact-icons-row {
+    justify-content: flex-start;
+  }
+  .footer-right {
+    text-align: right;
+  }
+  .copyright {
+    text-align: right;
+    margin-top: 14px;
+  }
+
+  /* DOWNLOAD SPECIFIC */
+  .section-jeep-1,
+  .section-jeep-2,
+  .section-jeep-3 {
+    background-size: cover;
+  }
+  .navbar {
+    top: 15px;
+  }
+  .banner-download {
+    width: 80%;
+  }
+  .banner-system-eval {
+    width: 51%;
+  }
+  .notice-landscape-box {
+    width: 88%;
+  }
+  .about-build-card {
+    width: 90%;
+    padding: 20px;
+  }
+  .download-card {
+    width: 90%;
+  }
+  .card-header-wrapper {
+    padding: 16px 16px 8px 16px;
+  }
+  .card-body {
+    padding: 16px 16px;
+  }
+
+  .info-cards-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .guide-card,
+  .video-card {
+    width: 90%;
+    max-width: 90%;
+    flex: auto;
+    height: auto;
+  }
+
+  .guide-card .card-inner-content {
+    padding: 95px 40px 28px 85px;
+  }
+  .video-card .card-inner-content {
+    padding: 105px 30px 24px 75px;
+  }
+  .guide-step-title {
+    font-size: 1.25rem;
+  }
+  .guide-list {
+    font-size: 1.05rem;
+    gap: 24px;
+  }
+  .red-card-title {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  /* Parent container needs to serve as the absolute anchor */
+  .section-jeep-1 {
+    position: relative !important;
+    gap: 24px;
+    min-height: 520px !important;
+  }
+
+  /* HEADER & FOOTER */
+  .navbar {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 90% !important; /* Reduced from 100% to create side margins */
+    margin: 15px auto 0 auto !important; /* Centers the navbar and adds top margin */
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    padding: 8px 16px !important;
+    height: auto !important;
+    min-height: 48px !important;
+    box-sizing: border-box !important;
+    z-index: 1000 !important;
+  }
+
+  .nav-logo {
+    position: static !important;
+    transform: none !important;
+  }
+
+  .nav-logo img {
+    height: 26px !important;
+  }
+
+  /* CLOSED STATE TOGGLE & LINK STYLING */
+  #resp-nav-toggle {
+    display: block !important;
+    position: static !important;
+  }
+
+  .nav-links {
+    display: none !important;
+    width: 100% !important;
+    flex-direction: column !important;
+    order: 3 !important;
+    margin-top: 15px !important;
+    gap: 15px !important;
+  }
+
+  .btn-download {
+    display: none !important;
+  }
+
+  /* Keep mobile accordion untouched: no phantom spacer here */
+  .nav-links::after {
+    content: none;
+  }
+
+  /* OPEN CARD STATE (From art_2.css) */
+  .navbar.resp-open .nav-links {
+    display: flex !important;
+  }
+
+  .navbar.resp-open .nav-links a {
+    font-size: 18px !important;
+  }
+
+  .navbar.resp-open .btn-download {
+    display: inline-flex !important;
+    position: static !important;
+    order: 4 !important;
+    transform: none !important;
+    margin-top: 10px !important;
+    width: 100% !important;
+  }
+
+  .navbar.resp-open .btn-download span {
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 20px !important;
+    padding: 8px 10px !important;
+  }
+
+  /* Footer Adjustments */
+  .footer-columns {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  .footer-left {
+    text-align: center;
+  }
+  .footer-right {
+    text-align: center;
+  }
+  .contact-icons-row {
+    justify-content: center;
+  }
+  .copyright {
+    text-align: center;
+    margin-top: 0;
+  }
+  .footer-center {
+    margin-top: 20px;
+  }
+  .footer-inner {
+    padding: 0 20px;
+  }
+
+  /* ABSOLUTE POSITIONING - ADJUSTED FOR SPACING */
+  .banner-download {
+    position: absolute !important;
+    top: 115px !important; /* Keeps the main banner anchored near the top */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
+    width: 80% !important;
+    z-index: 5 !important;
+  }
+
+  .banner-system-eval {
+    position: absolute !important;
+    top: 270px !important; /* Increased to push it below the Download banner */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
+    width: 51% !important;
+    z-index: 5 !important;
+  }
+
+  .notice-landscape-box {
+    position: absolute !important;
+    top: 380px !important; /* Increased to push it below the System Eval banner */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
+    width: 88% !important;
+    z-index: 5 !important;
+  }
+  .notice-landscape-text {
+    position: absolute !important;
+    top: 50% !important;
+    left: 52% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 100% !important;
+    font-size: clamp(0.55rem, 2.2vw, 0.75rem) !important;
+    padding: 0 clamp(14px, 5vw, 35px) !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .card-header-inner-pill {
+    font-size: 1.2rem;
+  }
+  .download-btn {
+    width: 90%;
+    font-size: 1rem;
+  }
+
+  .guide-card .card-inner-content {
+    padding: clamp(30px, 6vw, 48px) clamp(15px, 4vw, 20px)
+      clamp(20px, 4vw, 20px) clamp(35px, 8vw, 55px) !important;
+  }
+
+  .guide-card .red-card-title {
+    font-size: clamp(1.5rem, 4.5vw, 1.5rem) !important;
+    margin-bottom: clamp(15px, 4vw, 12px) !important;
+  }
+
+  .guide-card .guide-list {
+    font-size: clamp(0.4rem, 2.1vw, 0.75rem) !important;
+    gap: clamp(8px, 5vw, 15px) !important;
+  }
+
+  .guide-card .guide-step-title {
+    font-size: clamp(0.8rem, 2.4vw, 0.85rem) !important;
+  }
+
+  .video-card .card-inner-content {
+    padding: 48px 15px 20px 25px;
+  }
+  .red-card-title {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+  .guide-list {
+    font-size: 0.75rem;
+    gap: 12px;
+  }
+  .guide-step-title {
+    font-size: 0.85rem;
+  }
+}
+
+/* MACBOOK (1280x800) & MID-SIZE LAPTOPS */
+@media screen and (min-width: 1025px) and (max-width: 1366px),
+  screen and (width: 1280px) and (height: 800px) {
+  /* Navbar adjustments */
+  .navbar {
+    max-width: 1150px;
+    margin-top: 2.5vh;
+  }
+
+  .nav-links {
+    gap: 48px;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+
+  .btn-download span {
+    font-size: 22px;
+    padding: 5px 20px;
+  }
+
+  /* Section height and scaling for 800px viewport height */
+  .section-jeep-1,
+  .section-jeep-2,
+  .section-jeep-3 {
+    min-height: 700px;
+  }
+
+  .banner-download {
+    max-width: 580px;
+  }
+
+  .banner-system-eval {
+    max-width: 500px;
+  }
+
+  .notice-landscape-box {
+    max-width: 440px;
+  }
+
+  /* Main Card Containers */
+  .about-build-card,
+  .download-card {
+    max-width: 920px;
+    padding: 22px 32px;
+  }
+
+  .download-btn {
+    width: 50%;
+    font-size: 1.15rem;
+  }
+
+  /* Info Cards Row & Guide Containers */
+  .info-cards-row {
+    max-width: 880px;
+    gap: 20px;
+  }
+
+  .guide-card,
+  .video-card {
+    height: 560px;
+  }
+
+  .guide-card .card-inner-content {
+    padding: 45px 28px 24px 55px;
+  }
+
+  .video-card .card-inner-content {
+    padding: 45px 16px 20px 32px;
+  }
+
+  .red-card-title {
+    font-size: 1.8rem;
+    margin-bottom: 14px;
+  }
+
+  .guide-list {
+    font-size: 0.82rem;
+    gap: 12px;
+  }
+
+  .guide-step-title {
+    font-size: 0.95rem;
+  }
+
+  .modal-box {
+    max-width: 580px;
+  }
+}

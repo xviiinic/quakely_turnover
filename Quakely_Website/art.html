@@ -1,0 +1,1194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>The Art of Quakely - Art Gallery</title>
+    <link rel="icon" type="image/png" href="Q LOGO 2.png" />
+
+    <meta property="og:title" content="Quakely - Art Gallery" />
+    <meta
+      property="og:image"
+      content="https://quakelywebsite.vercel.app/Home%20Assets/HOME%20FULL%20ART%202.webp"
+    />
+    <meta
+      property="og:url"
+      content="https://quakelywebsite.vercel.app/art.html"
+    />
+    <meta property="og:type" content="website" />
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles/art.css" rel="stylesheet" />
+    <style>
+      /* Nav logo + links hover */
+      .nav-logo {
+        display: inline-flex;
+        transition:
+          translate 0.25s ease,
+          filter 0.25s ease;
+      }
+
+      .nav-logo:hover {
+        translate: 0 -2px;
+        filter: brightness(1.08) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
+      }
+
+      .nav-links a {
+        display: inline-block;
+        transition:
+          translate 0.2s ease,
+          filter 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        translate: 0 -2px;
+        filter: brightness(1.15);
+      }
+
+      .btn-download {
+        transition:
+          translate 0.2s ease,
+          filter 0.2s ease;
+      }
+
+      .btn-download:hover {
+        translate: 0 -3px;
+        filter: brightness(1.1);
+      }
+
+      /* Mobile nav toggle */
+      #resp-nav-toggle {
+        transition: filter 0.2s ease;
+      }
+
+      #resp-nav-toggle:hover {
+        filter: brightness(1.3);
+      }
+
+      /* Art logo (book) hover */
+      .art-logo-img {
+        transition:
+          translate 0.25s ease,
+          filter 0.25s ease;
+        cursor: pointer;
+      }
+
+      .art-logo-img:hover {
+        translate: 0 -4px;
+        filter: brightness(1.06) drop-shadow(0 10px 18px rgba(0, 0, 0, 0.35));
+      }
+
+      /* Polaroids stack hover */
+      .polaroids-img {
+        transition:
+          translate 0.25s ease,
+          filter 0.25s ease;
+        cursor: pointer;
+      }
+
+      .polaroids-img:hover {
+        translate: 0 -4px;
+        filter: brightness(1.06) drop-shadow(0 10px 18px rgba(0, 0, 0, 0.3));
+      }
+
+      /* ===================================================
+         CHARACTER CARDS (Chichi / Ningning / Paopao)
+         Hover lifts the CONTAINER frame. The character
+         artwork (.char-display-img) gets no hover of its
+         own — it just rides along since it sits inside
+         the container's box.
+         =================================================== */
+      .art-card-item {
+        transition:
+          translate 0.25s ease,
+          filter 0.25s ease;
+        cursor: pointer;
+      }
+
+      .art-card-item:hover {
+        translate: 0 -5px;
+        filter: brightness(1.04) drop-shadow(0 12px 20px rgba(0, 0, 0, 0.25));
+      }
+
+      /* Character carousel arrow buttons — hover the BUTTON,
+         never the arrow icon image directly */
+      .char-arrow-btn {
+        transition:
+          translate 0.2s ease,
+          filter 0.2s ease;
+      }
+
+      .char-arrow-btn:hover {
+        translate: 0 -2px;
+        filter: brightness(1.15);
+      }
+
+      /* ===================================================
+         NPCS & ENVIRONMENTS CAROUSELS
+         =================================================== */
+
+      /* Whole carousel board — subtle overall hover feedback */
+      .carousel-board {
+        transition: filter 0.25s ease;
+      }
+
+      .carousel-board:hover {
+        filter: brightness(1.015) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+      }
+
+      /* Carousel arrow buttons — hover the BUTTON, not the icon */
+      .carousel-arrow-btn {
+        transition:
+          translate 0.2s ease,
+          filter 0.2s ease;
+      }
+
+      .carousel-arrow-btn:hover {
+        translate: 0 -2px;
+        filter: brightness(1.12);
+      }
+
+      /* NPC character turnaround column — hover the column,
+         .npc-large-img (the artwork) gets no hover of its own */
+      .npc-left-col {
+        transition: translate 0.25s ease;
+        cursor: pointer;
+      }
+
+      .npc-left-col:hover {
+        translate: 0 -5px;
+      }
+
+      /* NPC text column — soft feedback, no images involved */
+      .npc-right-col {
+        transition: filter 0.2s ease;
+      }
+
+      .npc-right-col:hover {
+        filter: brightness(1.03);
+      }
+
+      /* NPC in-game screenshot frame — hover the frame border/box,
+         .npc-preview-img (the screenshot) gets no hover of its own */
+      .npc-preview-box {
+        transition:
+          translate 0.25s ease,
+          filter 0.25s ease;
+        cursor: pointer;
+      }
+
+      .npc-preview-box:hover {
+        translate: 0 -4px;
+        filter: brightness(1.05) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+      }
+
+      /* ===================================================
+         ENVIRONMENTS CAROUSEL — coverflow layout copied from
+         about.css (.carousel-cards-stage / .carousel-card /
+         .carousel-btn / .arrow-img), resized to fit this
+         page's bigger carousel board. Cards get NO hover of
+         their own (same as about.html) — only cursor + the
+         active/prev/next transition state. Buttons DO hover.
+         =================================================== */
+      .carousel-cards-stage {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .carousel-card {
+        position: absolute;
+        width: 46%;
+        max-width: 480px;
+        aspect-ratio: 16 / 9;
+        border-radius: 4px;
+        border: 5px solid #e12727;
+        background-color: #000000;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .carousel-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .carousel-card.active {
+        transform: scale(1.15);
+        z-index: 5;
+        opacity: 1;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+      }
+
+      .carousel-card.prev {
+        transform: translateX(-280px) scale(0.88);
+        z-index: 2;
+        opacity: 0.75;
+        filter: brightness(0.85);
+      }
+
+      .carousel-card.next {
+        transform: translateX(280px) scale(0.88);
+        z-index: 2;
+        opacity: 0.75;
+        filter: brightness(0.85);
+      }
+
+      .carousel-card:focus-visible {
+        outline: 3px solid #ffd000;
+        outline-offset: 2px;
+      }
+
+      /* Carousel arrow buttons — hover the BUTTON, never the arrow icon */
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: transparent !important;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        width: 56px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        padding: 0;
+        transition:
+          transform 0.15s ease,
+          filter 0.2s ease;
+      }
+
+      /* --- UPDATED SECTION FOR ARROW SPACING --- */
+      .carousel-btn.btn-prev {
+        left: 160px !important; /* Increased from 10px to push inward */
+      }
+
+      .carousel-btn.btn-next {
+        right: 160px !important; /* Increased from 10px to push inward */
+      }
+      /* ----------------------------------------- */
+
+      .carousel-btn:hover {
+        transform: translateY(-50%) scale(1.15);
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+      }
+
+      .carousel-btn:active,
+      .carousel-btn:focus {
+        transform: translateY(-50%) scale(0.95);
+      }
+
+      .arrow-img {
+        width: 100px;
+        height: auto;
+        display: block;
+        pointer-events: none;
+      }
+
+      .arrow-prev-img {
+        transform: scaleX(-1);
+      }
+
+      .arrow-next-img {
+        transform: scaleX(1);
+      }
+
+      /* ===================================================
+         FOOTER
+         =================================================== */
+      .contact-icon-circle {
+        transition:
+          translate 0.2s ease,
+          filter 0.2s ease;
+      }
+
+      .contact-icon-circle:hover {
+        translate: 0 -3px;
+        filter: brightness(1.1) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+      }
+
+      .email-link {
+        transition: filter 0.2s ease;
+      }
+
+      .email-link:hover {
+        filter: brightness(1.15);
+      }
+
+      .footer-logos {
+        transition: filter 0.2s ease;
+      }
+
+      .footer-logos:hover {
+        filter: brightness(1.08);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div class="nav-container">
+        <header class="navbar">
+          <a class="nav-logo" href="index.html">
+            <img
+              alt="Quakely Logo"
+              height="356"
+              src="Home Assets/Quakely Primary Logo.webp"
+              width="2000"
+            />
+          </a>
+          <button aria-expanded="false" aria-label="Menu" id="resp-nav-toggle">
+            ☰
+          </button>
+          <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT QUAKELY</a></li>
+            <li><a href="devs.html">THE DEVELOPERS</a></li>
+            <li><a class="active" href="art.html">ART</a></li>
+            <li><a href="feedback.html">FEEDBACK</a></li>
+          </ul>
+          <a class="btn-download" href="download.html">
+            <span>DOWNLOAD</span>
+          </a>
+        </header>
+      </div>
+      <section class="book-header-section">
+        <div class="book-container">
+          <img
+            alt="Art Logo"
+            class="art-logo-img"
+            height="1603"
+            src="Art Assets/ART LOGO.webp"
+            width="1202"
+          />
+          <img
+            alt="Polaroids"
+            class="polaroids-img"
+            height="1681"
+            loading="lazy"
+            src="Art Assets/POLAROIDS.webp"
+            width="1272"
+          />
+          <img
+            alt="Book Base"
+            class="book-whole-img"
+            height="2160"
+            loading="lazy"
+            src="Art Assets/Book Base.webp"
+            width="3840"
+          />
+        </div>
+      </section>
+      <main class="art-gallery-container">
+        <!-- Chichi -->
+        <div class="character-showcase-row chichi-row">
+          <div class="art-card-item chichi-card-left">
+            <button
+              aria-label="Previous Chichi"
+              class="char-arrow-btn char-arrow-left"
+              onclick="moveChichi(-1)"
+            >
+              <img
+                alt="Previous"
+                height="2160"
+                loading="lazy"
+                src="Art Assets/Arrow.webp"
+                width="3840"
+              />
+            </button>
+            <img
+              alt="Chichi Card Frame"
+              class="art-card-img"
+              height="3384"
+              loading="lazy"
+              src="Art Assets/BOOK PAGE LEFT.webp"
+              width="2734"
+            />
+            <img
+              alt="Chichi Character"
+              class="char-display-img"
+              height="6850"
+              id="chichiImageDisplay"
+              loading="lazy"
+              src="Art Assets/CHICHI 1.webp"
+              width="3747"
+            />
+            <button
+              aria-label="Next Chichi"
+              class="char-arrow-btn char-arrow-right"
+              onclick="moveChichi(1)"
+            >
+              <img
+                alt="Next"
+                height="2160"
+                loading="lazy"
+                src="Art Assets/Arrow.webp"
+                width="3840"
+              />
+            </button>
+          </div>
+          <div class="art-card-item chichi-card-right">
+            <img
+              alt="Page Background"
+              class="card-page-bg"
+              height="3384"
+              loading="lazy"
+              src="Art Assets/BOOK PAGE RIGHT.webp"
+              width="2734"
+            />
+            <div class="text-page-content">
+              <img
+                alt="Chichi Title"
+                class="chichi-title-logo"
+                height="419"
+                src="Art Assets/CHICHI TEXT.webp"
+                width="784"
+              />
+              <p class="chichi-desc-text">
+                Your expressive and supportive animal guide who provides
+                instructions and feedback throughout every mission.
+              </p>
+              <img
+                alt="Chichi Expressions"
+                class="char-faces-img chichi-faces"
+                height="1184"
+                loading="lazy"
+                src="Art Assets/CHICHI FACES.webp"
+                width="1362"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Ningning -->
+        <div class="character-showcase-row ningning-row">
+          <div class="art-card-item ningning-card-left">
+            <img
+              alt="Page Background"
+              class="card-page-bg"
+              height="3384"
+              loading="lazy"
+              src="Art Assets/BOOK PAGE LEFT.webp"
+              width="2734"
+            />
+            <div class="text-page-content">
+              <img
+                alt="Ningning Title"
+                class="ningning-title-logo"
+                height="419"
+                src="Art Assets/NINGNING TEXT.webp"
+                width="1172"
+              />
+              <p class="ningning-desc-text">
+                A brave Pusang Pinoy (Puspin) and one of our playable Safety
+                Heroes!
+              </p>
+              <img
+                alt="Ningning Expressions"
+                class="char-faces-img ningning-faces"
+                height="1381"
+                loading="lazy"
+                src="Art Assets/NINGNING FACES.webp"
+                width="1372"
+              />
+            </div>
+          </div>
+          <div class="art-card-item ningning-card-right">
+            <button
+              aria-label="Previous Ningning"
+              class="char-arrow-btn char-arrow-left"
+              onclick="moveNingning(-1)"
+            >
+              <img
+                alt="Previous"
+                height="2160"
+                loading="lazy"
+                src="Art Assets/Arrow.webp"
+                width="3840"
+              />
+            </button>
+            <img
+              alt="Ningning Card Frame"
+              class="art-card-img"
+              height="3384"
+              loading="lazy"
+              src="Art Assets/BOOK PAGE RIGHT.webp"
+              width="2734"
+            />
+            <img
+              alt="Ningning Character"
+              class="char-display-img"
+              height="7187"
+              id="ningningImageDisplay"
+              loading="lazy"
+              src="Art Assets/NINGNING 1.webp"
+              width="4303"
+            />
+            <button
+              aria-label="Next Ningning"
+              class="char-arrow-btn char-arrow-right"
+              onclick="moveNingning(1)"
+            >
+              <img
+                alt="Next"
+                height="2160"
+                loading="lazy"
+                src="Art Assets/Arrow.webp"
+                width="3840"
+              />
+            </button>
+          </div>
+        </div>
+        <!-- Paopao -->
+        <div class="character-showcase-row paopao-row">
+          <div class="art-card-item paopao-card-left">
+            <button
+              aria-label="Previous Paopao"
+              class="char-arrow-btn char-arrow-left"
+              onclick="movePaopao(-1)"
+            >
+              <img
+                alt="Previous"
+                height="2160"
+                loading="lazy"
+                src="Art Assets/Arrow.webp"
+                width="3840"
+              />
+            </button>
+            <img
+              alt="Paopao Card Frame"
+              class="art-card-img"
+              height="3384"
+              loading="lazy"
+              src="Art Assets/BOOK PAGE LEFT.webp"
+              width="2734"
+            />
+            <img
+              alt="Paopao Character"
+              class="char-display-img"
+              height="7331"
+              id="paopaoImageDisplay"
+              loading="lazy"
+              src="Art Assets/PAOPAO 1.webp"
+              width="4631"
+            />
+            <button
+              aria-label="Next Paopao"
+              class="char-arrow-btn char-arrow-right"
+              onclick="movePaopao(1)"
+            >
+              <img
+                alt="Next"
+                height="2160"
+                loading="lazy"
+                src="Art Assets/Arrow.webp"
+                width="3840"
+              />
+            </button>
+          </div>
+          <div class="art-card-item paopao-card-right">
+            <img
+              alt="Page Background"
+              class="card-page-bg"
+              height="3384"
+              loading="lazy"
+              src="Art Assets/BOOK PAGE RIGHT.webp"
+              width="2734"
+            />
+            <div class="text-page-content">
+              <img
+                alt="Paopao Title"
+                class="paopao-title-logo"
+                height="419"
+                src="Art Assets/PAOPAO TEXT.webp"
+                width="969"
+              />
+              <p class="paopao-desc-text">
+                An adventurous Asong Pinoy (Aspin) and our second playable
+                Safety Hero!
+              </p>
+              <img
+                alt="Paopao Expressions"
+                class="char-faces-img paopao-faces"
+                height="1241"
+                loading="lazy"
+                src="Art Assets/PAOPAO FACES.webp"
+                width="1328"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- NPCs Carousel -->
+        <div class="carousel-container npcs-carousel">
+          <button
+            aria-label="Previous NPC"
+            class="carousel-arrow-btn carousel-arrow-left"
+            onclick="moveNpc(-1)"
+          >
+            <img
+              alt="Previous"
+              height="2160"
+              loading="lazy"
+              src="Art Assets/Arrow.webp"
+              width="3840"
+            />
+          </button>
+          <button
+            aria-label="Next NPC"
+            class="carousel-arrow-btn carousel-arrow-right"
+            onclick="moveNpc(1)"
+          >
+            <img
+              alt="Next"
+              height="2160"
+              loading="lazy"
+              src="Art Assets/Arrow.webp"
+              width="3840"
+            />
+          </button>
+          <div class="carousel-board">
+            <img
+              alt="NPCs"
+              class="carousel-header-title"
+              height="419"
+              loading="lazy"
+              src="Art Assets/NPCS TEXT.webp"
+              width="641"
+            />
+            <!-- Slide 1: Teacher Kara Bao -->
+            <div class="npc-slide active">
+              <div class="npc-left-col">
+                <img
+                  alt="Teacher Kara Bao Turnaround"
+                  class="npc-large-img"
+                  height="1228"
+                  loading="lazy"
+                  src="Art Assets/TEACHER BIG.webp"
+                  width="1481"
+                />
+              </div>
+              <div class="npc-right-col">
+                <h3 class="npc-name color-teacher">TEACHER KARA BAO</h3>
+                <p class="npc-desc">
+                  Serves as the classroom authority figure who teaches the
+                  player the "Duck, Cover, and Hold" procedure.
+                </p>
+                <div class="npc-preview-box border-teacher">
+                  <img
+                    alt="Teacher In-Game Scenario"
+                    class="npc-preview-img"
+                    height="3391"
+                    loading="lazy"
+                    src="Art Assets/TEACHER SS.webp"
+                    width="7491"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Slide 2: Rescuer Goat -->
+            <div class="npc-slide">
+              <div class="npc-left-col">
+                <img
+                  alt="Rescuer Turnaround"
+                  class="npc-large-img"
+                  height="1206"
+                  loading="lazy"
+                  src="Art Assets/RESCUER BIG.webp"
+                  width="1228"
+                />
+              </div>
+              <div class="npc-right-col">
+                <h3 class="npc-name color-orange">RESCUER (GOAT)</h3>
+                <p class="npc-desc">
+                  Functions as the emergency responder who guides learners
+                  through post-earthquake rescue and safety protocols.
+                </p>
+                <div class="npc-preview-box border-orange">
+                  <img
+                    alt="Rescuer In-Game Scenario"
+                    class="npc-preview-img"
+                    height="3391"
+                    loading="lazy"
+                    src="Art Assets/RESCUER SS.webp"
+                    width="7491"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Slide 3: Classmate 1 (Pig) -->
+            <div class="npc-slide">
+              <div class="npc-left-col">
+                <img
+                  alt="Classmate 1 Turnaround"
+                  class="npc-large-img"
+                  height="1237"
+                  loading="lazy"
+                  src="Art Assets/PIG BIG.webp"
+                  width="1228"
+                />
+              </div>
+              <div class="npc-right-col">
+                <h3 class="npc-name color-pink">CLASSMATE 1 (PIG)</h3>
+                <p class="npc-desc">
+                  Portrays an injured classmate during the post-earthquake
+                  scenarios to help introduce basic first-aid awareness.
+                </p>
+                <div class="npc-preview-box border-pink">
+                  <img
+                    alt="Classmate 1 In-Game Scenario"
+                    class="npc-preview-img"
+                    height="3391"
+                    loading="lazy"
+                    src="Art Assets/PIG SS.webp"
+                    width="7491"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Slide 4: Classmate 2 (Aspin) -->
+            <div class="npc-slide">
+              <div class="npc-left-col">
+                <img
+                  alt="Classmate 2 Turnaround"
+                  class="npc-large-img"
+                  height="1269"
+                  loading="lazy"
+                  src="Art Assets/ASPIN BIG.webp"
+                  width="1303"
+                />
+              </div>
+              <div class="npc-right-col">
+                <h3 class="npc-name color-tan">CLASSMATE 2 (ASPIN)</h3>
+                <p class="npc-desc">
+                  Acts as a regular fellow student who participates in the
+                  classroom preparedness scenarios alongside the player.
+                </p>
+                <div class="npc-preview-box border-tan">
+                  <img
+                    alt="Classmate 2 In-Game Scenario"
+                    class="npc-preview-img"
+                    height="3391"
+                    loading="lazy"
+                    src="Art Assets/ASPIN SS.webp"
+                    width="7491"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Environments Carousel -->
+        <div class="carousel-container">
+          <div class="carousel-board env-board">
+            <img
+              alt="Environments"
+              class="carousel-header-title"
+              height="419"
+              loading="lazy"
+              src="Art Assets/ENVIRONMENTS TEXT.webp"
+              width="1700"
+            />
+            <div class="env-content-area">
+              <button
+                aria-label="Previous Environment"
+                class="carousel-btn btn-prev"
+                onclick="moveEnv(-1)"
+              >
+                <img
+                  alt="Previous"
+                  class="arrow-img arrow-prev-img"
+                  height="2160"
+                  loading="lazy"
+                  src="Art Assets/Arrow.webp"
+                  width="3840"
+                />
+              </button>
+              <button
+                aria-label="Next Environment"
+                class="carousel-btn btn-next"
+                onclick="moveEnv(1)"
+              >
+                <img
+                  alt="Next"
+                  class="arrow-img arrow-next-img"
+                  height="2160"
+                  loading="lazy"
+                  src="Art Assets/Arrow.webp"
+                  width="3840"
+                />
+              </button>
+              <div class="carousel-cards-stage">
+                <div class="carousel-card prev" onclick="moveEnv(-1)">
+                  <img
+                    alt="Previous Environment"
+                    height="1080"
+                    id="envPrevImg"
+                    loading="lazy"
+                    src="Art Assets/TABLE.webp"
+                    width="1920"
+                  />
+                </div>
+                <div class="carousel-card active">
+                  <img
+                    alt="Environment Art"
+                    height="1080"
+                    id="envImageDisplay"
+                    loading="lazy"
+                    src="Art Assets/SCHOOL OPEN AREA.webp"
+                    width="1920"
+                  />
+                </div>
+                <div class="carousel-card next" onclick="moveEnv(1)">
+                  <img
+                    alt="Next Environment"
+                    height="1080"
+                    id="envNextImg"
+                    loading="lazy"
+                    src="Art Assets/BEDROOM.webp"
+                    width="1920"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-columns">
+            <div class="footer-left">
+              <p>Quakely by BYTES</p>
+              <p>National University - Manila | CCIT</p>
+              <p style="margin-top: 4px">
+                Contact:
+                <a
+                  class="email-link"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=devteam.bytes@gmail.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  devteam.bytes@gmail.com
+                </a>
+              </p>
+              <div class="contact-icons-row">
+                <a
+                  class="contact-icon-circle"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=devteam.bytes@gmail.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="Compose Email in Gmail"
+                >
+                  <img
+                    alt="Email"
+                    height="30"
+                    loading="lazy"
+                    src="Home Assets/EMAIL ICON.webp"
+                    width="30"
+                  />
+                </a>
+                <a
+                  class="contact-icon-circle"
+                  href="tel:+639991867943"
+                  title="Call Us"
+                >
+                  <img
+                    alt="Phone"
+                    height="30"
+                    loading="lazy"
+                    src="Home Assets/PHONE ICON.webp"
+                    width="30"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="footer-right">
+              <p style="padding-bottom: 4px">
+                Disclaimer: An educational capstone project based<br />
+                on PHIVOLCS guidelines. Not an official<br />
+                government emergency tool.
+              </p>
+              <p class="copyright">© 2026 Team BYTES. All rights reserved.</p>
+            </div>
+          </div>
+          <div class="footer-center">
+            <div class="footer-logos">
+              <img
+                alt="Quakely Logo"
+                class="quakely-logo"
+                height="356"
+                src="Home Assets/Quakely Primary Logo.webp"
+                width="2000"
+              />
+              <img
+                alt="BYTES Logo"
+                class="bytes-logo"
+                height="606"
+                src="Home Assets/BYTES logo transp bg.webp"
+                width="2686"
+              />
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- Carousel Scripts -->
+    <script>
+      // Chichi Carousel
+      const chichiImages = [
+        "CHICHI 1.webp",
+        "CHICHI 2.webp",
+        "CHICHI 3.webp",
+        "CHICHI 4.webp",
+        "CHICHI 5.webp",
+        "CHICHI 6.webp",
+      ];
+      let currentChichiIndex = 0;
+      let isChichiLocked = false; // Added lock flag[cite: 1]
+      const CHICHI_COOLDOWN = 250; // Cooldown duration in milliseconds[cite: 1]
+      const chichiImgElement = document.getElementById("chichiImageDisplay");
+
+      function showChichiImage(index) {
+        if (index >= chichiImages.length) {
+          currentChichiIndex = 0;
+        } else if (index < 0) {
+          currentChichiIndex = chichiImages.length - 1;
+        } else {
+          currentChichiIndex = index;
+        }
+        chichiImgElement.src = "Art Assets/" + chichiImages[currentChichiIndex];
+      }
+
+      function moveChichi(step) {
+        if (isChichiLocked) return; // Exit if rapid click is locked out[cite: 1]
+        isChichiLocked = true; // Set lock[cite: 1]
+
+        showChichiImage(currentChichiIndex + step);
+
+        setTimeout(() => {
+          isChichiLocked = false; // Release lock after cooldown[cite: 1]
+        }, CHICHI_COOLDOWN);
+      }
+
+      // Ningning Carousel
+      // Ningning Carousel
+      const ningningImages = [
+        "NINGNING 1.webp",
+        "NINGNING 2.webp",
+        "NINGNING 3.webp",
+        "NINGNING 4.webp",
+        "NINGNING 5.webp",
+        "NINGNING 6.webp",
+      ];
+      let currentNingningIndex = 0;
+      let isNingningLocked = false; // Added lock flag[cite: 1]
+      const NINGNING_COOLDOWN = 250; // Cooldown duration in milliseconds[cite: 1]
+      const ningningImgElement = document.getElementById(
+        "ningningImageDisplay",
+      );
+
+      function showNingningImage(index) {
+        if (index >= ningningImages.length) {
+          currentNingningIndex = 0;
+        } else if (index < 0) {
+          currentNingningIndex = ningningImages.length - 1;
+        } else {
+          currentNingningIndex = index;
+        }
+        ningningImgElement.src =
+          "Art Assets/" + ningningImages[currentNingningIndex];
+      }
+
+      function moveNingning(step) {
+        if (isNingningLocked) return; // Exit if rapid click is locked out[cite: 1]
+        isNingningLocked = true; // Set lock[cite: 1]
+
+        showNingningImage(currentNingningIndex + step);
+
+        setTimeout(() => {
+          isNingningLocked = false; // Release lock after cooldown[cite: 1]
+        }, NINGNING_COOLDOWN);
+      }
+
+      // Paopao Carousel
+      // Paopao Carousel
+      const paopaoImages = [
+        "PAOPAO 1.webp",
+        "PAOPAO 2.webp",
+        "PAOPAO 3.webp",
+        "PAOPAO 4.webp",
+        "PAOPAO 5.webp",
+        "PAOPAO 6.webp",
+      ];
+      let currentPaopaoIndex = 0;
+      let isPaopaoLocked = false; // Added lock flag[cite: 1]
+      const PAOPAO_COOLDOWN = 250; // Cooldown duration in milliseconds[cite: 1]
+      const paopaoImgElement = document.getElementById("paopaoImageDisplay");
+
+      function showPaopaoImage(index) {
+        if (index >= paopaoImages.length) {
+          currentPaopaoIndex = 0;
+        } else if (index < 0) {
+          currentPaopaoIndex = paopaoImages.length - 1;
+        } else {
+          currentPaopaoIndex = index;
+        }
+        paopaoImgElement.src = "Art Assets/" + paopaoImages[currentPaopaoIndex];
+      }
+
+      function movePaopao(step) {
+        if (isPaopaoLocked) return; // Exit if rapid click is locked out[cite: 1]
+        isPaopaoLocked = true; // Set lock[cite: 1]
+
+        showPaopaoImage(currentPaopaoIndex + step);
+
+        setTimeout(() => {
+          isPaopaoLocked = false; // Release lock after cooldown[cite: 1]
+        }, PAOPAO_COOLDOWN);
+      }
+
+      // NPC Carousel
+      // NPC Carousel
+      let currentNpcIndex = 0;
+      let isNpcLocked = false; // Added lock flag[cite: 1]
+      const NPC_COOLDOWN = 250; // Cooldown duration in milliseconds[cite: 1]
+      const npcSlides = document.querySelectorAll(".npc-slide");
+
+      function showNpcSlide(index) {
+        npcSlides.forEach((slide) => slide.classList.remove("active"));
+        if (index >= npcSlides.length) {
+          currentNpcIndex = 0;
+        } else if (index < 0) {
+          currentNpcIndex = npcSlides.length - 1;
+        } else {
+          currentNpcIndex = index;
+        }
+        npcSlides[currentNpcIndex].classList.add("active");
+      }
+
+      function moveNpc(step) {
+        if (isNpcLocked) return; // Exit if rapid click is locked out[cite: 1]
+        isNpcLocked = true; // Set lock[cite: 1]
+
+        showNpcSlide(currentNpcIndex + step);
+
+        setTimeout(() => {
+          isNpcLocked = false; // Release lock after cooldown[cite: 1]
+        }, NPC_COOLDOWN);
+      }
+
+      // Environment Carousel
+      const envImages = [
+        "SCHOOL OPEN AREA.webp",
+        "BEDROOM.webp",
+        "CLASSROOM.webp",
+        "INTRA OPEN AREA.webp",
+        "JEEP 01.webp",
+        "JEEP 02.webp",
+        "JEEP 0.webp",
+        "KITCHEN.webp",
+        "SCHOOL HALLWAY.webp",
+        "STREET.webp",
+        "TABLE.webp",
+      ];
+
+      let currentEnvIndex = 0;
+      let isCarouselLocked = false;
+      const ANIMATION_COOLDOWN = 400; // Matches your 0.4s CSS transition duration
+
+      const envPrevImgElement = document.getElementById("envPrevImg");
+      const envActiveImgElement = document.getElementById("envImageDisplay");
+      const envNextImgElement = document.getElementById("envNextImg");
+
+      function updateEnvCarousel() {
+        const total = envImages.length;
+        const prevIdx = (currentEnvIndex - 1 + total) % total;
+        const nextIdx = (currentEnvIndex + 1) % total;
+        envPrevImgElement.src = "Art Assets/" + envImages[prevIdx];
+        envActiveImgElement.src = "Art Assets/" + envImages[currentEnvIndex];
+        envNextImgElement.src = "Art Assets/" + envImages[nextIdx];
+      }
+
+      function moveEnv(step) {
+        if (isCarouselLocked) return;
+        isCarouselLocked = true;
+
+        const total = envImages.length;
+        currentEnvIndex = (currentEnvIndex + step + total) % total;
+        updateEnvCarousel();
+
+        setTimeout(() => {
+          isCarouselLocked = false;
+        }, ANIMATION_COOLDOWN);
+      }
+
+      updateEnvCarousel();
+
+      // Responsive Navbar Toggle
+      const navToggleBtn = document.getElementById("resp-nav-toggle");
+      const navbarEl = document.querySelector(".navbar");
+
+      if (navToggleBtn && navbarEl) {
+        navToggleBtn.addEventListener("click", () => {
+          navbarEl.classList.toggle("resp-open");
+          const isExpanded = navbarEl.classList.contains("resp-open");
+          navToggleBtn.setAttribute("aria-expanded", isExpanded);
+        });
+      }
+
+      // Environment Carousel Touch Swipe Support (Bound once to a static container)
+      const envStage = document.querySelector(".env-content-area");
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      if (envStage) {
+        envStage.addEventListener(
+          "touchstart",
+          (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+          },
+          { passive: true },
+        );
+
+        envStage.addEventListener(
+          "touchend",
+          (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleEnvSwipe();
+          },
+          { passive: true },
+        );
+      }
+
+      function handleEnvSwipe() {
+        const swipeThreshold = 40; // Minimum distance in px to register a swipe
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+          if (diff > 0) {
+            // Swiped Left -> Move Next
+            moveEnv(1);
+          } else {
+            // Swiped Right -> Move Previous
+            moveEnv(-1);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
