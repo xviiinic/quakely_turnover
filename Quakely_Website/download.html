@@ -2,10 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Download Quakely - System Evaluation</title>
     <link rel="icon" type="image/png" href="Q LOGO 2.png" />
 
@@ -266,257 +263,262 @@
   <body>
     <div class="page-container">
       <main class="content-landmark">
-      <!-- SECTION 1: JEEP 1 -->
-      <section class="section-jeep-1">
-        <header class="navbar">
-          <a class="nav-logo" href="index.html">
-            <img
-              alt="Quakely Logo"
-              height="356"
-              src="Home Assets/Quakely Primary Logo.webp"
-              width="2000"
-            />
-          </a>
-          <button aria-expanded="false" aria-label="Menu" id="resp-nav-toggle">
-            ☰
-          </button>
-          <ul class="nav-links">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT QUAKELY</a></li>
-            <li><a href="devs.html">THE DEVELOPERS</a></li>
-            <li><a href="art.html">ART</a></li>
-            <li><a href="feedback.html">FEEDBACK</a></li>
-          </ul>
-          <a class="btn-download" href="download.html">
-            <span>DOWNLOAD</span>
-          </a>
-        </header>
-        <img
-          alt="Download The Game"
-          class="banner-download"
-          height="944"
-          src="Download Assets/DOWNLOAD BANNER.webp"
-          width="2313"
-        />
-        <img
-          alt="System Evaluation"
-          class="banner-system-eval"
-          height="662"
-          src="Download Assets/System Evaluation.webp"
-          width="1653"
-        />
-        <div class="notice-landscape-box">
-          <img
-            alt="Notice Banner"
-            class="notice-landscape-bg"
-            height="659"
-            loading="lazy"
-            src="Download Assets/RED BANNER LANDSCAPE.webp"
-            width="1652"
-          />
-          <div class="notice-landscape-text">
-            Thank you for taking part in the evaluation of Quakely, an
-            Android-based educational mobile game designed to introduce Grade
-            4–6 learners to earthquake preparedness through interactive,
-            localized, and scenario-based activities. Please follow the
-            instructions below to download, install, and launch the evaluation
-            build on your Android device.
-          </div>
-        </div>
-      </section>
-      <!-- SECTION 2: JEEP 2 -->
-      <section class="section-jeep-2">
-        <!-- White Container: About This Build -->
-        <div class="about-build-card">
-          <p>
-            This version of Quakely is a
-            <strong>pre-release evaluation build</strong> developed for the
-            project's system evaluation phase. The application is being
-            evaluated for selected software quality characteristics and its
-            instructional suitability for the intended educational context.
-          </p>
-          <p>
-            As an evaluation build, you may encounter minor bugs, visual
-            inconsistencies, performance issues, or other unfinished elements
-            during gameplay.
-          </p>
-          <p>
-            <b
-              >Your feedback and evaluation are important in identifying areas
-              for improvement.</b
-            >
-          </p>
-        </div>
-        <!-- Android Download Card -->
-        <div class="download-card">
-          <div class="card-header-wrapper">
-            <div class="card-header-inner-pill">ANDROID 10+ (APK)</div>
-          </div>
-          <div class="card-body">
-            <label class="consent-group">
-              <input
-                id="consentCheckbox"
-                onchange="toggleDownloadBtn()"
-                type="checkbox"
+        <!-- SECTION 1: JEEP 1 -->
+        <section class="section-jeep-1">
+          <header class="navbar">
+            <a class="nav-logo" href="index.html">
+              <img
+                alt="Quakely Logo"
+                height="356"
+                src="Home Assets/Quakely Primary Logo.webp"
+                width="2000"
               />
-              <span>
-                I consent to the
-                <button
-                  class="consent-link"
-                  onclick="openModal('guidelinesModal')"
-                  type="button"
-                >
-                  System Evaluation Guidelines
-                </button>
-                &
-                <button
-                  class="consent-link"
-                  onclick="openModal('privacyModal')"
-                  type="button"
-                >
-                  Privacy & Data Policy
-                </button>
-              </span>
-            </label>
+            </a>
             <button
-              class="download-btn"
-              disabled=""
-              id="downloadBtn"
-              onclick="handleDownload()"
-              type="button"
+              aria-expanded="false"
+              aria-label="Menu"
+              id="resp-nav-toggle"
             >
-              DOWNLOAD QUAKELY APK
-              <span>Android 10 or higher required</span>
+              ☰
             </button>
-            <span class="version-subtext"
-              >Version with confirmed stability</span
-            >
-            <div class="quick-links">
-              <button
-                class="link-btn"
-                onclick="openModal('releaseNotesModal')"
-                type="button"
-              >
-                Update History
-              </button>
-              <button
-                class="link-btn"
-                onclick="openModal('sysReqModal')"
-                type="button"
-              >
-                System Requirements
-              </button>
+            <ul class="nav-links">
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="about.html">ABOUT QUAKELY</a></li>
+              <li><a href="devs.html">THE DEVELOPERS</a></li>
+              <li><a href="art.html">ART</a></li>
+            </ul>
+            <a class="btn-download" href="download.html">
+              <span>DOWNLOAD</span>
+            </a>
+          </header>
+          <img
+            alt="Download The Game"
+            class="banner-download"
+            height="944"
+            src="Download Assets/DOWNLOAD BANNER.webp"
+            width="2313"
+          />
+          <img
+            alt="System Evaluation"
+            class="banner-system-eval"
+            height="662"
+            src="Download Assets/System Evaluation.webp"
+            width="1653"
+          />
+          <div class="notice-landscape-box">
+            <img
+              alt="Notice Banner"
+              class="notice-landscape-bg"
+              height="659"
+              loading="lazy"
+              src="Download Assets/RED BANNER LANDSCAPE.webp"
+              width="1652"
+            />
+            <div class="notice-landscape-text">
+              Thank you for taking part in the evaluation of Quakely, an
+              Android-based educational mobile game designed to introduce Grade
+              4–6 learners to earthquake preparedness through interactive,
+              localized, and scenario-based activities. Please follow the
+              instructions below to download, install, and launch the evaluation
+              build on your Android device.
             </div>
           </div>
-        </div>
-      </section>
-      <!-- SECTION 3: JEEP 3 -->
-      <section class="section-jeep-3">
-        <div class="info-cards-row">
-          <!-- Installation Guide -->
-          <div class="portrait-card guide-card">
-            <img
-              alt="Installation Guide Banner"
-              class="portrait-bg-img"
-              height="2013"
-              loading="lazy"
-              src="Download Assets/RED BANNER PORTRAIT.webp"
-              width="1350"
-            />
-            <div class="card-inner-content">
-              <h2 class="red-card-title">INSTALLATION GUIDE</h2>
-              <div class="guide-list-wrap">
-                <ol class="guide-list">
-                  <li>
-                    <span class="guide-step-title"
-                      >Step 1 — Download the APK</span
-                    >
-                    <span class="guide-step-desc"
-                      >Tap <b>Download Quakely APK</b> and wait for the APK file
-                      to finish downloading.</span
-                    >
-                  </li>
-                  <li>
-                    <span class="guide-step-title"
-                      >Step 2 — Allow Installation</span
-                    >
-                    <span class="guide-step-desc"
-                      >Open the downloaded APK file. If your device displays a
-                      security message, open <b>Settings</b> and allow your
-                      browser or file manager to
-                      <b>Install unknown apps / Allow from this source</b>.
-                      <i
-                        >(The exact wording may vary depending on your Android
-                        device.)</i
-                      ></span
-                    >
-                  </li>
-                  <li>
-                    <span class="guide-step-title"
-                      >Step 3 — Install Quakely</span
-                    >
-                    <span class="guide-step-desc"
-                      >Return to the downloaded APK, tap it, and select
-                      <b>Install</b>.</span
-                    >
-                  </li>
-                  <li>
-                    <span class="guide-step-title"
-                      >Step 4 — Launch the Game</span
-                    >
-                    <span class="guide-step-desc"
-                      >Tap <b>Open</b> to launch Quakely and follow the
-                      on-screen instructions.</span
-                    >
-                  </li>
-                  <li>
-                    <span class="guide-step-title">Step 5 — Start Playing</span>
-                    <span class="guide-step-desc"
-                      >Explore Quakely's different learning modules and
-                      interactive activities to familiarize yourself with the
-                      application.</span
-                    >
-                  </li>
-                </ol>
-              </div>
-            </div>
+        </section>
+        <!-- SECTION 2: JEEP 2 -->
+        <section class="section-jeep-2">
+          <!-- White Container: About This Build -->
+          <div class="about-build-card">
+            <p>
+              This version of Quakely is a
+              <strong>pre-release evaluation build</strong> developed for the
+              project's system evaluation phase. The application is being
+              evaluated for selected software quality characteristics and its
+              instructional suitability for the intended educational context.
+            </p>
+            <p>
+              As an evaluation build, you may encounter minor bugs, visual
+              inconsistencies, performance issues, or other unfinished elements
+              during gameplay.
+            </p>
+            <p>
+              <b
+                >Your feedback and evaluation are important in identifying areas
+                for improvement.</b
+              >
+            </p>
           </div>
-          <!-- Video Tutorial -->
-          <div class="portrait-card video-card">
-            <img
-              alt="Video Tutorial Banner"
-              class="portrait-bg-img"
-              height="2013"
-              loading="lazy"
-              src="Download Assets/RED BANNER PORTRAIT.webp"
-              width="1350"
-            />
-            <div class="card-inner-content">
-              <h2 class="red-card-title">VIDEO TUTORIAL</h2>
-              <div class="phone-mockup">
-                <div class="phone-notch"></div>
-                <iframe
-                  class="phone-video"
-                  src="https://www.youtube.com/embed/ThYyaC8h6aI"
-                  title="Quakely Video Tutorial"
-                  frameborder="0"
-                  allow="
-                    accelerometer;
-                    autoplay;
-                    clipboard-write;
-                    encrypted-media;
-                    gyroscope;
-                    picture-in-picture;
-                    web-share;
-                  "
-                  allowfullscreen
+          <!-- Android Download Card -->
+          <div class="download-card">
+            <div class="card-header-wrapper">
+              <div class="card-header-inner-pill">ANDROID 10+ (APK)</div>
+            </div>
+            <div class="card-body">
+              <label class="consent-group">
+                <input
+                  id="consentCheckbox"
+                  onchange="toggleDownloadBtn()"
+                  type="checkbox"
+                />
+                <span>
+                  I consent to the
+                  <button
+                    class="consent-link"
+                    onclick="openModal('guidelinesModal')"
+                    type="button"
+                  >
+                    System Evaluation Guidelines
+                  </button>
+                  &
+                  <button
+                    class="consent-link"
+                    onclick="openModal('privacyModal')"
+                    type="button"
+                  >
+                    Privacy & Data Policy
+                  </button>
+                </span>
+              </label>
+              <button
+                class="download-btn"
+                disabled=""
+                id="downloadBtn"
+                onclick="handleDownload()"
+                type="button"
+              >
+                DOWNLOAD QUAKELY APK
+                <span>Android 10 or higher required</span>
+              </button>
+              <span class="version-subtext"
+                >Version with confirmed stability</span
+              >
+              <div class="quick-links">
+                <button
+                  class="link-btn"
+                  onclick="openModal('releaseNotesModal')"
+                  type="button"
                 >
-                </iframe>
+                  Update History
+                </button>
+                <button
+                  class="link-btn"
+                  onclick="openModal('sysReqModal')"
+                  type="button"
+                >
+                  System Requirements
+                </button>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+        <!-- SECTION 3: JEEP 3 -->
+        <section class="section-jeep-3">
+          <div class="info-cards-row">
+            <!-- Installation Guide -->
+            <div class="portrait-card guide-card">
+              <img
+                alt="Installation Guide Banner"
+                class="portrait-bg-img"
+                height="2013"
+                loading="lazy"
+                src="Download Assets/RED BANNER PORTRAIT.webp"
+                width="1350"
+              />
+              <div class="card-inner-content">
+                <h2 class="red-card-title">INSTALLATION GUIDE</h2>
+                <div class="guide-list-wrap">
+                  <ol class="guide-list">
+                    <li>
+                      <span class="guide-step-title"
+                        >Step 1 — Download the APK</span
+                      >
+                      <span class="guide-step-desc"
+                        >Tap <b>Download Quakely APK</b> and wait for the APK
+                        file to finish downloading.</span
+                      >
+                    </li>
+                    <li>
+                      <span class="guide-step-title"
+                        >Step 2 — Allow Installation</span
+                      >
+                      <span class="guide-step-desc"
+                        >Open the downloaded APK file. If your device displays a
+                        security message, open <b>Settings</b> and allow your
+                        browser or file manager to
+                        <b>Install unknown apps / Allow from this source</b>.
+                        <i
+                          >(The exact wording may vary depending on your Android
+                          device.)</i
+                        ></span
+                      >
+                    </li>
+                    <li>
+                      <span class="guide-step-title"
+                        >Step 3 — Install Quakely</span
+                      >
+                      <span class="guide-step-desc"
+                        >Return to the downloaded APK, tap it, and select
+                        <b>Install</b>.</span
+                      >
+                    </li>
+                    <li>
+                      <span class="guide-step-title"
+                        >Step 4 — Launch the Game</span
+                      >
+                      <span class="guide-step-desc"
+                        >Tap <b>Open</b> to launch Quakely and follow the
+                        on-screen instructions.</span
+                      >
+                    </li>
+                    <li>
+                      <span class="guide-step-title"
+                        >Step 5 — Start Playing</span
+                      >
+                      <span class="guide-step-desc"
+                        >Explore Quakely's different learning modules and
+                        interactive activities to familiarize yourself with the
+                        application.</span
+                      >
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+            <!-- Video Tutorial -->
+            <div class="portrait-card video-card">
+              <img
+                alt="Video Tutorial Banner"
+                class="portrait-bg-img"
+                height="2013"
+                loading="lazy"
+                src="Download Assets/RED BANNER PORTRAIT.webp"
+                width="1350"
+              />
+              <div class="card-inner-content">
+                <h2 class="red-card-title">VIDEO TUTORIAL</h2>
+                <div class="phone-mockup">
+                  <div class="phone-notch"></div>
+                  <iframe
+                    class="phone-video"
+                    src="https://www.youtube.com/embed/ThYyaC8h6aI"
+                    title="Quakely Video Tutorial"
+                    frameborder="0"
+                    allow="
+                      accelerometer;
+                      autoplay;
+                      clipboard-write;
+                      encrypted-media;
+                      gyroscope;
+                      picture-in-picture;
+                      web-share;
+                    "
+                    allowfullscreen
+                  >
+                  </iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <!-- FOOTER -->
       <footer class="footer">
