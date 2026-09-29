@@ -1030,3 +1030,105 @@ img {
     transform-origin: center center;
   }
 }
+/* MOBILE NAVBAR + BURGER DROPDOWN: match index.css (phones only, same 768px
+   burger breakpoint this page already uses). Placed last, with !important,
+   to override the earlier mobile accordion rules. */
+@media (max-width: 768px) {
+  .navbar {
+    position: relative !important;
+    top: -12px !important; /* same lift as index.css; offset only, no layout shift */
+    width: 100% !important;
+    max-width: 1380px !important;
+    margin: 3vh auto 0 auto !important;
+    height: 52px !important;
+    min-height: 0 !important;
+    padding: 0 20px !important;
+    border-width: 3px !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    z-index: 200 !important;
+  }
+
+  /* Logo: same fluid size/offset as index.css, stays put when the menu opens */
+  .nav-logo {
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+    margin: 0 0 0 clamp(-42px, calc(-6px - 4vw), -30px) !important;
+    z-index: 202 !important;
+  }
+  .nav-logo img {
+    height: clamp(24px, calc(16.67px + 2.04vw), 35px) !important;
+    width: auto !important;
+  }
+
+  #resp-nav-toggle {
+    display: block !important;
+    position: relative !important;
+    right: 0 !important;
+    top: 0 !important;
+    font-size: 28px !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    z-index: 202 !important;
+  }
+
+  /* Open state: the bar grows into the dropdown panel. The first row is kept at
+     the same height as the closed bar, so the logo and burger never move. */
+  .navbar.resp-open {
+    height: auto !important;
+    min-height: 52px !important;
+    flex-wrap: wrap !important;
+    align-content: flex-start !important;
+    padding: 0 20px 30px 20px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
+  }
+  .navbar.resp-open #resp-nav-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 46px !important;
+  }
+  .navbar.resp-open .nav-links {
+    display: flex !important;
+    width: 100% !important;
+    order: 3 !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+    margin: 24px 0 0 0 !important;
+    padding: 0 !important;
+  }
+  .navbar.resp-open .nav-links li {
+    list-style: none !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+  .navbar.resp-open .nav-links a {
+    font-size: 18px !important;
+    color: var(--text-brown) !important;
+    text-decoration: none !important;
+  }
+  .navbar.resp-open .nav-links a.active {
+    text-decoration: underline !important;
+    text-decoration-thickness: 3px !important;
+    text-underline-offset: 6px !important;
+  }
+  .navbar.resp-open .btn-download {
+    display: inline-flex !important;
+    position: relative !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    order: 4 !important;
+    margin: 30px auto 0 auto !important;
+  }
+  .navbar.resp-open .btn-download span {
+    font-size: 20px !important;
+    padding: 8px 32px !important;
+  }
+}

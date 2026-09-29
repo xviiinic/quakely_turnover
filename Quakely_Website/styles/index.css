@@ -701,6 +701,7 @@ body {
   }
   .navbar.resp-open {
     height: auto;
+    min-height: 52px; /* keeps the bar (and logo) from shrinking when the dropdown opens */
   }
   .navbar.resp-open .nav-links {
     display: flex;
@@ -1097,5 +1098,26 @@ body {
 @media screen and (min-width: 1367px) and (min-height: 850px) {
   .char-ningning {
     bottom: 209px;
+  }
+}
+/* Raise the navbar slightly on mobile only.
+   Uses top offset (not margin) so nothing else in the layout shifts. */
+@media (max-width: 600px) {
+  .navbar {
+    top: -12px;
+  }
+}
+
+/* Fluid navbar logo for tablet/phone widths.
+   Size and left offset scale smoothly with the screen instead of jumping at the
+   900px and 600px breakpoints. Values at 900px match the desktop logo
+   (35px tall), and values at 600px and below match the previous phone look
+   for position. Desktop (901px+) is untouched. */
+@media (max-width: 900px) {
+  .nav-logo {
+    margin-left: clamp(-42px, calc(-6px - 4vw), -30px);
+  }
+  .nav-logo img {
+    height: clamp(24px, calc(16.67px + 2.04vw), 35px);
   }
 }
