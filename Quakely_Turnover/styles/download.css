@@ -39,11 +39,6 @@ body {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Accessibility: wraps the page content in a <main> landmark for
-   screen readers/audits without affecting layout — display:contents
-   makes the wrapper itself invisible to the flex layout so the jeep
-   sections still behave as direct flex children of .page-container
-   exactly as before. */
 .content-landmark {
   display: contents;
 }
@@ -112,10 +107,6 @@ body {
   text-underline-offset: 4px;
 }
 
-/* Invisible spacer to match the Index/About nav-link centering
-   (those pages include the download button as an extra item inside
-   .nav-links, which shifts the visible links left of center by one
-   gap-width; this reproduces that without touching any markup) */
 .nav-links::after {
   content: "";
 }
@@ -178,10 +169,10 @@ body {
 
 .banner-download {
   position: relative;
-  width: 60%;
-  max-width: 680px;
+  width: 100%;
+  max-width: 850px;
   height: auto;
-  top: 15px;
+  top: 10%;
   left: 0px;
   margin-top: 10px;
   margin-bottom: -10px;
@@ -266,35 +257,6 @@ body {
   align-items: center;
   gap: 24px;
   z-index: 2;
-}
-
-/* ABOUT THIS BUILD CARD (above the download card)*/
-.about-build-card {
-  position: relative;
-  background: #ffffff;
-  width: 95%;
-  max-width: 1050px;
-  border-radius: 6px;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
-  padding: 28px 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  color: #030303;
-  font-family: "Montserrat", sans-serif;
-  z-index: 3;
-  box-sizing: border-box;
-}
-
-.about-build-card p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #030303;
-}
-
-.about-build-card p strong,
-.about-build-card p b {
-  color: #030303;
 }
 
 /* DOWNLOAD CARD CONTAINER */
@@ -958,6 +920,25 @@ body {
   }
 }
 
+/* LAPTOP & UP (901px+): "cover" makes the jeep art always fill its section, so
+   no green shows above/below it. Where the art was already tall enough this
+   renders exactly the same as before (same as "100% auto"). */
+@media (min-width: 901px) {
+  .section-jeep-1,
+  .section-jeep-2,
+  .section-jeep-3 {
+    background-size: cover;
+  }
+}
+
+/* SMALL LAPTOP (901px - 1024px): keep the download card off the screen edges */
+@media (min-width: 901px) and (max-width: 1024px) {
+  .download-card {
+    width: 85%;
+    max-width: 920px;
+  }
+}
+
 /* TABLET */
 @media (max-width: 900px) {
   /* HEADER & FOOTER */
@@ -1034,10 +1015,6 @@ body {
   .notice-landscape-box {
     width: 88%;
   }
-  .about-build-card {
-    width: 90%;
-    padding: 20px;
-  }
   .download-card {
     width: 90%;
   }
@@ -1081,7 +1058,6 @@ body {
 
 /* MOBILE */
 @media (max-width: 600px) {
-  /* Parent container needs to serve as the absolute anchor */
   .section-jeep-1 {
     position: relative !important;
     gap: 24px;
@@ -1094,8 +1070,8 @@ body {
     top: auto !important;
     left: auto !important;
     transform: none !important;
-    width: 90% !important; /* Reduced from 100% to create side margins */
-    margin: 15px auto 0 auto !important; /* Centers the navbar and adds top margin */
+    width: 90% !important;
+    margin: 15px auto 0 auto !important;
     flex-wrap: wrap !important;
     justify-content: space-between !important;
     padding: 8px 16px !important;
@@ -1114,7 +1090,6 @@ body {
     height: 26px !important;
   }
 
-  /* CLOSED STATE TOGGLE & LINK STYLING */
   #resp-nav-toggle {
     display: block !important;
     position: static !important;
@@ -1133,12 +1108,11 @@ body {
     display: none !important;
   }
 
-  /* Keep mobile accordion untouched: no phantom spacer here */
   .nav-links::after {
     content: none;
   }
 
-  /* OPEN CARD STATE (From art_2.css) */
+  /* Open Burger Dropdown */
   .navbar.resp-open .nav-links {
     display: flex !important;
   }
@@ -1189,10 +1163,9 @@ body {
     padding: 0 20px;
   }
 
-  /* ABSOLUTE POSITIONING - ADJUSTED FOR SPACING */
   .banner-download {
     position: absolute !important;
-    top: 115px !important; /* Keeps the main banner anchored near the top */
+    top: 150px !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     margin: 0 !important;
@@ -1202,7 +1175,7 @@ body {
 
   .banner-system-eval {
     position: absolute !important;
-    top: 270px !important; /* Increased to push it below the Download banner */
+    top: 270px !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     margin: 0 !important;
@@ -1212,7 +1185,7 @@ body {
 
   .notice-landscape-box {
     position: absolute !important;
-    top: 380px !important; /* Increased to push it below the System Eval banner */
+    top: 380px !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     margin: 0 !important;
@@ -1281,7 +1254,6 @@ body {
 /* MACBOOK (1280x800) & MID-SIZE LAPTOPS */
 @media screen and (min-width: 1025px) and (max-width: 1366px),
   screen and (width: 1280px) and (height: 800px) {
-  /* Navbar adjustments */
   .navbar {
     max-width: 1150px;
     margin-top: 2.5vh;
@@ -1320,7 +1292,6 @@ body {
   }
 
   /* Main Card Containers */
-  .about-build-card,
   .download-card {
     max-width: 920px;
     padding: 22px 32px;
@@ -1368,14 +1339,11 @@ body {
     max-width: 580px;
   }
 }
-/* MOBILE NAVBAR + BURGER DROPDOWN: match index.css (phones only, same 600px
-   burger breakpoint this page already uses). Placed last, with !important,
-   to override the earlier mobile navbar rules. */
+/* MOBILE NAVBAR + BURGER DROPDOWN */
 @media (max-width: 600px) {
   .navbar {
     position: relative !important;
-    /* Visual offset only (the 15px top margin is unchanged): puts the bar at the
-       same on-screen height as index.css (20px section padding + 3vh - 12px). */
+
     top: calc(3vh - 27px) !important;
     left: auto !important;
     transform: none !important;
@@ -1394,7 +1362,6 @@ body {
     z-index: 1000 !important;
   }
 
-  /* Logo: same fluid size/offset as index.css, stays put when the menu opens */
   .nav-logo {
     position: relative !important;
     left: 0 !important;
@@ -1420,8 +1387,6 @@ body {
     z-index: 202 !important;
   }
 
-  /* Open state: the bar grows into the dropdown panel. The first row is kept at
-     the same height as the closed bar, so the logo and burger never move. */
   .navbar.resp-open {
     height: auto !important;
     min-height: 52px !important;
@@ -1475,5 +1440,17 @@ body {
     width: auto !important;
     font-size: 20px !important;
     padding: 8px 32px !important;
+  }
+}
+
+/* NAVBAR LINK SPACING */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+  .nav-links {
+    gap: clamp(48px, calc(48px + (100vw - 1025px) * 0.0625), 64px);
+  }
+}
+@media screen and (min-width: 1367px) {
+  .nav-links {
+    gap: 100px;
   }
 }

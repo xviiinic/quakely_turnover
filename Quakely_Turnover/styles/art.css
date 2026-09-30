@@ -126,10 +126,6 @@ body {
   text-underline-offset: 4px;
 }
 
-/* Invisible spacer to match the Index/About nav-link centering
-   (those pages include the download button as an extra item inside
-   .nav-links, which shifts the visible links left of center by one
-   gap-width; this reproduces that without touching any markup) */
 .nav-links::after {
   content: "";
 }
@@ -273,7 +269,6 @@ body {
   z-index: 10;
 }
 
-/* Individual Character Positions */
 .chichi-card-left {
   width: 450px;
   height: 530px;
@@ -653,7 +648,6 @@ body {
   object-fit: cover;
   display: block;
 }
-/* Carousel Update Coverflow Card rules (to prevent overflow issues) */
 .carousel-card {
   position: absolute;
   width: 46%;
@@ -890,7 +884,7 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 15;
-    touch-action: manipulation; /* Add this line */
+    touch-action: manipulation;
     transition:
       transform 0.15s ease,
       filter 0.15s ease;
@@ -991,7 +985,6 @@ body {
 
 /* MOBILE */
 @media (max-width: 600px) {
-  /* Hide environment buttons on mobile */
   .carousel-btn[onclick*="moveEnv"],
   .carousel-arrow-btn[onclick*="moveEnv"] {
     display: none !important;
@@ -1000,7 +993,6 @@ body {
   .carousel-card {
     touch-action: manipulation;
   }
-  /* Ensure the header title centers perfectly on mobile */
   .carousel-board.env-board .carousel-header-title {
     position: relative !important;
     top: 0 !important;
@@ -1045,7 +1037,6 @@ body {
     display: none;
   }
 
-  /* Keep mobile accordion untouched: no phantom spacer here */
   .nav-links::after {
     content: none;
   }
@@ -1103,18 +1094,15 @@ body {
     padding: 40px 20px;
   }
 
-  /* Targets the Ningning showcase row specifically */
   .character-showcase-row.ningning-row {
     display: flex;
     flex-direction: column;
   }
 
-  /* Forces the right card (character carousel) to the top in mobile view */
   .character-showcase-row.ningning-row .ningning-card-right {
     order: 1;
   }
 
-  /* Forces the left card (text and descriptions) below it */
   .character-showcase-row.ningning-row .ningning-card-left {
     order: 2;
   }
@@ -1204,7 +1192,6 @@ body {
     border-width: 3px !important;
   }
 
-  /* Side card offsets for smaller viewports */
   .carousel-board.env-board .carousel-card.prev {
     transform: translate3d(-100px, 0, 0) scale(0.8) !important;
   }
@@ -1216,7 +1203,7 @@ body {
   .carousel-board.env-board .carousel-card.active {
     transform: translate3d(0, 0, 0) scale(1) !important;
   }
-  /* Environment Arrows Placement */
+
   .carousel-arrow-btn[onclick*="moveEnv"] {
     top: auto !important;
     bottom: 12px !important;
@@ -1240,7 +1227,6 @@ body {
 /* MACBOOK (1280x800) & MID-SIZE LAPTOPS */
 @media screen and (min-width: 1025px) and (max-width: 1366px),
   screen and (width: 1280px) and (height: 800px) {
-  /* Navbar spacing adjustments */
   .navbar {
     max-width: 1150px;
     margin-top: 2.5vh;
@@ -1356,13 +1342,11 @@ body {
     right: 130px !important;
   }
 }
-/* MOBILE NAVBAR + BURGER DROPDOWN: match index.css (phones only, same 600px
-   burger breakpoint this page already uses). Placed last, with !important,
-   to override the earlier mobile accordion rules. */
+/* MOBILE NAVBAR + BURGER DROPDOWN */
 @media (max-width: 600px) {
   .navbar {
     position: relative !important;
-    top: -12px !important; /* same lift as index.css; offset only, no layout shift */
+    top: -12px !important;
     width: 100% !important;
     max-width: 1380px !important;
     margin: 3vh auto 0 auto !important;
@@ -1376,7 +1360,6 @@ body {
     z-index: 200 !important;
   }
 
-  /* Logo: same fluid size/offset as index.css, stays put when the menu opens */
   .nav-logo {
     position: relative !important;
     left: 0 !important;
@@ -1401,8 +1384,7 @@ body {
     z-index: 202 !important;
   }
 
-  /* Open state: the bar grows into the dropdown panel. The first row is kept at
-     the same height as the closed bar, so the logo and burger never move. */
+  /* Open state */
   .navbar.resp-open {
     height: auto !important;
     min-height: 52px !important;
@@ -1454,5 +1436,17 @@ body {
   .navbar.resp-open .btn-download span {
     font-size: 20px !important;
     padding: 8px 32px !important;
+  }
+}
+
+/* NAVBAR LINK SPACING */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+  .nav-links {
+    gap: clamp(48px, calc(48px + (100vw - 1025px) * 0.0625), 64px);
+  }
+}
+@media screen and (min-width: 1367px) {
+  .nav-links {
+    gap: 100px;
   }
 }

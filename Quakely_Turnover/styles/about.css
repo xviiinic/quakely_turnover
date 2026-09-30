@@ -39,14 +39,14 @@ body {
 /* TOP SECTION */
 .section-art {
   position: relative;
-  width: 100%; /* Changed from 105% to eliminate horizontal scroll */
-  aspect-ratio: 16 / 9; /* Locks container proportions to background artwork */
+  width: 100%;
+  aspect-ratio: 16 / 9;
   height: auto;
   min-height: auto;
   background-image: url("../About Assets/ABT FULL ART 4.webp");
   background-position: center top;
   background-repeat: no-repeat;
-  background-size: 100% 100%; /* Stretches background 1:1 with container box */
+  background-size: 100% 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,11 +65,7 @@ body {
 /* ABT LOGO */
 .hero-abt-logo {
   position: absolute;
-  top: clamp(
-    280px,
-    34vw,
-    420px
-  ); /* Scales dynamically with viewport width changes */
+  top: clamp(280px, 34vw, 420px);
   left: 50%;
   transform: translate(-50%, -50%);
   width: clamp(240px, 32vw, 500px);
@@ -82,11 +78,11 @@ body {
 
 .hero-chick-gif {
   position: absolute;
-  bottom: 5%; /* Locks feet directly to the white tile seam */
-  left: 11%; /* Horizontal placement */
-  width: 25%; /* Scales fluidly with container width */
-  max-width: 420px; /* Prevents oversized sprite on 4K/wide PC screens */
-  min-width: 220px; /* Prevents shrinking too small on 13" MacBooks */
+  bottom: 5%;
+  left: 11%;
+  width: 25%;
+  max-width: 420px;
+  min-width: 220px;
   height: auto;
   z-index: 5;
   transform: none;
@@ -161,7 +157,6 @@ body {
   text-underline-offset: 4px;
 }
 
-/* Target only text links so the download button is not affected */
 .nav-links > li > a:hover,
 .nav-links a:not(.btn-download):hover {
   opacity: 0.8;
@@ -188,7 +183,6 @@ body {
     box-shadow 0.2s ease;
 }
 
-/* Maintain full opacity, brightness lift, and layout alignment without shifting transform */
 .btn-download:hover,
 .btn-download:hover span {
   opacity: 1 !important;
@@ -537,7 +531,7 @@ body {
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   cursor: pointer;
   user-select: none;
-  will-change: transform; /* Added for GPU optimization[cite: 7] */
+  will-change: transform;
 }
 
 .carousel-card img {
@@ -558,21 +552,21 @@ body {
 }
 
 .carousel-card.active {
-  transform: translate3d(0, 0, 0) scale(1.15); /* Updated to translate3d[cite: 7] */
+  transform: translate3d(0, 0, 0) scale(1.15);
   z-index: 5;
   opacity: 1;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
 }
 
 .carousel-card.prev {
-  transform: translate3d(-240px, 0, 0) scale(0.99); /* Updated to translate3d[cite: 7] */
+  transform: translate3d(-240px, 0, 0) scale(0.99);
   z-index: 2;
   opacity: 0.75;
   filter: brightness(0.9);
 }
 
 .carousel-card.next {
-  transform: translate3d(240px, 0, 0) scale(0.99); /* Updated to translate3d[cite: 7] */
+  transform: translate3d(240px, 0, 0) scale(0.99);
   z-index: 2;
   opacity: 0.75;
   filter: brightness(0.9);
@@ -965,9 +959,7 @@ body {
 
 /* MOBILE */
 @media (max-width: 600px) {
-  /* HEADER & FOOTER */
   @media (max-width: 768px) {
-    /* 1. Navbar Accordion Setup */
     .navbar {
       position: relative !important;
       width: 90% !important;
@@ -1082,22 +1074,16 @@ body {
   }
   .hero-chick-gif {
     position: absolute;
-    width: 42%; /* Fits mobile screens proportionally */
-    max-width: 240px; /* Keeps it bounded on larger mobile devices */
-    min-width: 150px; /* Prevents shrinking too much on small phones */
-    height: auto !important; /* Overrides fixed heights to preserve original proportions */
-    object-fit: contain !important; /* Prevents any image stretching or cropping */
-    bottom: 8% !important; /* Aligns feet with the floor line on mobile */
-    left: 0; /* Adjusts horizontal positioning */
-    transform: none; /* Removes hardcoded scale/translate distortions */
+    width: 42%;
+    max-width: 240px;
+    min-width: 150px;
+    height: auto !important;
+    object-fit: contain !important;
+    bottom: 8% !important;
+    left: 0;
+    transform: none;
   }
 
-  /* NOTE: the rules below were previously leaking outside this mobile
-     media query (a closing brace was placed too early), which caused
-     the fixed-height, cropped table/chair image sizing meant for phones
-     to incorrectly apply on tablet and desktop too. They are now
-     correctly scoped to mobile only (max-width: 600px), matching their
-     original intent and leaving mobile display unchanged. */
   .floor-section {
     width: 100%;
     background-position: center top;
@@ -1106,10 +1092,10 @@ body {
   .section-board-title {
     font-size: 24px;
     margin-bottom: 5px;
-    -webkit-text-stroke: 5px #523316; /* Thinner stroke for mobile */
+    -webkit-text-stroke: 5px #523316;
     text-shadow:
       0 1px 0 #523316,
-      0 2px 0 rgba(34, 14, 3, 0.5); /* Scaled-down shadow for mobile */
+      0 2px 0 rgba(34, 14, 3, 0.5);
   }
   .title-teaser {
     position: relative;
@@ -1284,6 +1270,163 @@ body {
   }
 }
 
+/* TABLET-TO-PHONE RANGE  */
+@media (min-width: 601px) and (max-width: 900px) {
+  .table-board-unit {
+    max-width: 560px;
+  }
+
+  .section-board-title {
+    font-size: 24px;
+    margin-top: -20px;
+    margin-bottom: 5px;
+    -webkit-text-stroke: 5px #523316;
+    text-shadow:
+      0 1px 0 #523316,
+      0 2px 0 rgba(34, 14, 3, 0.5);
+  }
+  .red-video-container {
+    width: 95%;
+    margin-top: 20px;
+    max-width: 85%;
+  }
+
+  .table-chair-bg {
+    height: 420px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 10px;
+  }
+  .floor-section .table-board-unit:nth-of-type(2) .table-chair-bg {
+    height: 450px;
+  }
+
+  .papers-layout-wrapper {
+    flex-direction: row;
+    gap: 6px;
+    transform: none;
+    margin-top: 10px;
+    align-items: flex-start;
+    padding-bottom: 120px;
+  }
+  .left-paper-column,
+  .right-paper-column {
+    width: 50%;
+    transform: none;
+    position: static;
+  }
+  .paper-short-img,
+  .paper-long-img {
+    height: 230px;
+    object-fit: fill;
+  }
+  .paper-heading {
+    font-size: 13px;
+    margin-bottom: 2px;
+    text-align: center;
+  }
+  .paper-text {
+    font-size: 8px;
+    line-height: 1;
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .overlay-left,
+  .overlay-right {
+    padding: 15px 10px 5px 15px;
+  }
+
+  .polaroids-row {
+    position: absolute;
+    top: 220px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  .polaroids-row img {
+    height: 140px;
+    width: auto;
+    transform: rotate(-2deg);
+  }
+
+  .sticker-paopao {
+    width: 45px;
+    top: -10px;
+    left: -10px;
+  }
+  .sticker-chichi {
+    width: 45px;
+    top: -10px;
+    left: auto;
+    right: -18px;
+    transform: none;
+  }
+  .sticker-ningning {
+    width: 45px;
+    bottom: auto;
+    top: 190px;
+    right: -5px;
+  }
+
+  .gameplay-carousel-container {
+    padding-bottom: 30px;
+    transform: none;
+    margin-top: 10px;
+  }
+  .carousel-card {
+    width: 55%;
+  }
+  .carousel-card.prev {
+    transform: translateX(-35%) scale(0.85);
+    margin-top: -20px;
+  }
+  .carousel-card.next {
+    transform: translateX(35%) scale(0.85);
+    margin-top: -20px;
+  }
+  .carousel-card.active {
+    margin-top: -30px !important;
+  }
+  .carousel-btn {
+    transform: translateY(-50%) scale(0.8) !important;
+  }
+  .carousel-btn.btn-prev {
+    left: 25px;
+  }
+  .carousel-btn.btn-next {
+    right: 25px;
+  }
+  .gameplay-paper-wrapper {
+    margin-top: -20px;
+    transform: translateY(-11%) scale(0.8);
+  }
+  .gameplay-title {
+    font-size: clamp(12px, 3.8vw, 16px) !important;
+    text-align: center !important;
+  }
+  .gameplay-desc {
+    font-size: clamp(9px, 5vw, 10px) !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+  }
+  .gameplay-text-overlay {
+    top: -8px !important;
+    width: 95% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    left: 53% !important;
+    transform: translateX(-50%) !important;
+    padding: 8px 10px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+}
+
 .mobile-only {
   display: none;
 }
@@ -1300,7 +1443,7 @@ body {
     aspect-ratio: 16 / 9;
     height: auto;
     min-height: auto;
-    max-height: none; /* Prevents viewport height caps from shifting artwork */
+    max-height: none;
     background-size: 100% 100%;
     background-position: center top;
     background-repeat: no-repeat;
@@ -1308,7 +1451,7 @@ body {
 
   .hero-chick-gif {
     position: absolute;
-    bottom: 7%; /* Keeps feet anchored to tile seam on PC & Mac */
+    bottom: 7%;
     left: 11%;
     width: 22%;
     max-width: 390px;
@@ -1339,7 +1482,6 @@ body {
     margin-top: 10px;
   }
 
-  /* Middle Papers & Polaroids Layout scaling */
   .papers-layout-wrapper {
     max-width: 760px;
     gap: 20px;
@@ -1438,7 +1580,6 @@ body {
   }
 }
 
-/* NAVBAR: laptop-range scaling (matches about/art/devs pages) */
 @media screen and (min-width: 1025px) and (max-width: 1366px),
   screen and (width: 1280px) and (height: 800px) {
   .navbar {
@@ -1459,14 +1600,11 @@ body {
     padding: 5px 20px;
   }
 }
-/* MOBILE NAVBAR + BURGER DROPDOWN: match index.css exactly (phones only).
-   Placed last, with !important, to override the earlier mobile navbar rules. */
+/* MOBILE NAVBAR + BURGER DROPDOWN */
 @media (max-width: 600px) {
   .navbar {
     position: relative !important;
-    /* -12px matches index.css, plus -20px because the About hero has
-       40px top padding on phones vs 20px on Home. Using top (not margin)
-       so the hero content below doesn't move. */
+
     top: -32px !important;
     width: calc(100% - 48px) !important;
     max-width: 1380px !important;
@@ -1481,7 +1619,6 @@ body {
     z-index: 200 !important;
   }
 
-  /* Logo: same fluid size/offset as index.css, and stays put when the menu opens */
   .nav-logo {
     position: relative !important;
     left: 0 !important;
@@ -1506,7 +1643,7 @@ body {
     z-index: 202 !important;
   }
 
-  /* Open state: bar keeps its height so the logo doesn't move */
+  /* Open state */
   .navbar.resp-open {
     height: auto !important;
     min-height: 52px !important;
@@ -1514,7 +1651,7 @@ body {
     padding: 0 20px !important;
   }
 
-  /* Dropdown panel: overlays the bar, exactly like index.css */
+  /* Dropdown panel*/
   .navbar.resp-open .nav-links {
     display: flex !important;
     position: absolute !important;
@@ -1563,5 +1700,52 @@ body {
   .navbar.resp-open .btn-download span {
     font-size: 20px !important;
     padding: 8px 32px !important;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+  .nav-links {
+    gap: clamp(48px, calc(48px + (100vw - 1025px) * 0.0625), 64px);
+  }
+}
+@media screen and (min-width: 1367px) {
+  .nav-links {
+    gap: 100px;
+  }
+}
+
+.hero-chick-gif {
+  --chichi-scale: 1.25;
+  --chichi-shift: -8%;
+  scale: var(--chichi-scale);
+  translate: var(--chichi-shift) 0;
+  transform-origin: 52% 100%;
+}
+
+@media screen and (min-width: 1774px) {
+  .hero-chick-gif {
+    max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-chick-gif {
+    --chichi-shift: -3%;
+  }
+  .hero-abt-logo {
+    width: 54% !important;
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1024px) {
+  .hero-abt-logo {
+    top: 21.5vw;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .hero-abt-logo {
+    width: 35%;
+    max-width: none;
   }
 }

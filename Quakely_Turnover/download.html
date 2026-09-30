@@ -122,21 +122,6 @@
         filter: brightness(1.03) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
       }
 
-      /* About This Build card */
-      .about-build-card {
-        transition:
-          translate 0.25s ease,
-          filter 0.25s ease,
-          box-shadow 0.25s ease;
-        cursor: default;
-      }
-
-      .about-build-card:hover {
-        translate: 0 -4px;
-        filter: brightness(1.01);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-      }
-
       /* Android download card */
       .download-card {
         transition:
@@ -298,55 +283,9 @@
             src="Download Assets/DOWNLOAD BANNER.webp"
             width="2313"
           />
-          <img
-            alt="System Evaluation"
-            class="banner-system-eval"
-            height="662"
-            src="Download Assets/System Evaluation.webp"
-            width="1653"
-          />
-          <div class="notice-landscape-box">
-            <img
-              alt="Notice Banner"
-              class="notice-landscape-bg"
-              height="659"
-              loading="lazy"
-              src="Download Assets/RED BANNER LANDSCAPE.webp"
-              width="1652"
-            />
-            <div class="notice-landscape-text">
-              Thank you for taking part in the evaluation of Quakely, an
-              Android-based educational mobile game designed to introduce Grade
-              4–6 learners to earthquake preparedness through interactive,
-              localized, and scenario-based activities. Please follow the
-              instructions below to download, install, and launch the evaluation
-              build on your Android device.
-            </div>
-          </div>
         </section>
         <!-- SECTION 2: JEEP 2 -->
         <section class="section-jeep-2">
-          <!-- White Container: About This Build -->
-          <div class="about-build-card">
-            <p>
-              This version of Quakely is a
-              <strong>pre-release evaluation build</strong> developed for the
-              project's system evaluation phase. The application is being
-              evaluated for selected software quality characteristics and its
-              instructional suitability for the intended educational context.
-            </p>
-            <p>
-              As an evaluation build, you may encounter minor bugs, visual
-              inconsistencies, performance issues, or other unfinished elements
-              during gameplay.
-            </p>
-            <p>
-              <b
-                >Your feedback and evaluation are important in identifying areas
-                for improvement.</b
-              >
-            </p>
-          </div>
           <!-- Android Download Card -->
           <div class="download-card">
             <div class="card-header-wrapper">
@@ -363,19 +302,12 @@
                   I consent to the
                   <button
                     class="consent-link"
-                    onclick="openModal('guidelinesModal')"
-                    type="button"
-                  >
-                    System Evaluation Guidelines
-                  </button>
-                  &
-                  <button
-                    class="consent-link"
                     onclick="openModal('privacyModal')"
                     type="button"
                   >
                     Privacy & Data Policy
                   </button>
+                  and understand how my data is collected.
                 </span>
               </label>
               <button
@@ -660,12 +592,7 @@
             observation and system verification. It is not used for grading or
             academic assessment.
           </p>
-          <p style="margin-bottom: 6px"><b>Evaluation Data</b></p>
-          <p style="margin-bottom: 12px">
-            Information provided through evaluation forms will be used for
-            <b>academic research and system evaluation</b> and handled
-            confidentially.
-          </p>
+
           <p style="margin-bottom: 6px"><b>Data Protection</b></p>
           <p>
             Collected data will not be sold or used for commercial purposes and
@@ -687,16 +614,36 @@
           </button>
         </div>
         <div class="modal-content">
-          <h4>Version 1 Beta (First Beta Release)</h4>
+          <h4>v1.0 (Official Release)</h4>
           <ul>
-            <li>Initial build for Capstone pilot testing.</li>
             <li>
-              <b>Complete Build:</b> This release features the entire, fully
-              playable educational game from start to finish. It includes all
-              narrative chapters, fully integrated Live2D animations for the
-              characters, finalized interactive mechanics for earthquake
-              preparedness, and a fully functioning user interface ready for
-              comprehensive end-to-end user testing.
+              <b>Finalized Build:</b> The official completed version of Quakely,
+              incorporating improvements from beta testing, pilot school
+              testing, and panel feedback, and prepared for official project
+              turnover.
+            </li>
+            <li>
+              <b>Enhancements:</b> Resolved floating object issues, refined
+              character animations and sound effects, optimized CPU usage and
+              storage requirements, and improved screen layout compatibility and
+              responsiveness across various Android devices.
+            </li>
+          </ul>
+        </div>
+
+        <div class="modal-content">
+          <h4>v0.1 (Pilot Release)</h4>
+          <ul>
+            <li>
+              <b>Initial Build:</b> First complete build featuring the full game
+              from beginning to end, including all story chapters, character
+              animations, and earthquake safety activities.
+            </li>
+            <li>
+              <b>Core Fixes:</b> Resolved database synchronization issues,
+              improved voice-over and on-screen text synchronization, and
+              optimized overall gameplay performance based on initial pilot
+              testing.
             </li>
           </ul>
         </div>
