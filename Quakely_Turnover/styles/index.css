@@ -1202,7 +1202,7 @@ body {
 }
 
 /* MOBILE CHARACTERS */
-@media (max-width: 600px) {
+@media (max-width: px) {
   .char-chichi {
     --nudge: 0px;
     height: clamp(184px, calc(220px + (100vw - 375px) * 0.65), 262px);
@@ -1440,5 +1440,165 @@ body {
     line-height: calc(
       12.5px + clamp(0px, calc((100vw - 375px) * 0.0446), 2.9px)
     );
+  }
+}
+
+/* WIDE PC SCREENS */
+@media screen and (min-width: 1537px) {
+  :root {
+    --u: calc(100vw / 1536);
+  }
+
+  /* TOP SECTION */
+  .section-art {
+    height: calc(820 * var(--u));
+    padding: calc(20 * var(--u)) calc(24 * var(--u)) 0 calc(24 * var(--u));
+  }
+
+  /* NAVBAR */
+  .navbar {
+    max-width: calc(1380 * var(--u));
+    margin-top: calc(18 * var(--u));
+    height: calc(48 * var(--u));
+    border-width: calc(3 * var(--u));
+    border-radius: calc(6 * var(--u));
+    box-shadow: 0 calc(4 * var(--u)) calc(10 * var(--u)) rgba(0, 0, 0, 0.25);
+  }
+
+  .nav-logo {
+    left: calc(-22 * var(--u));
+  }
+
+  .nav-logo img {
+    height: calc(35 * var(--u));
+  }
+
+  .nav-links {
+    gap: calc(100 * var(--u));
+  }
+
+  .nav-links a {
+    font-size: calc(20 * var(--u));
+    letter-spacing: calc(0.8 * var(--u));
+  }
+
+  .nav-links a.active {
+    text-decoration-thickness: calc(3 * var(--u));
+    text-underline-offset: calc(4 * var(--u));
+  }
+
+  .btn-download {
+    right: calc(-18 * var(--u));
+    border-width: calc(2.5 * var(--u));
+    border-radius: calc(8 * var(--u));
+    padding: calc(5 * var(--u));
+    box-shadow: 0 calc(4 * var(--u)) calc(8 * var(--u)) rgba(0, 0, 0, 0.35);
+  }
+
+  .btn-download span {
+    border-width: calc(1.5 * var(--u));
+    border-radius: calc(6 * var(--u));
+    padding: calc(6 * var(--u)) calc(26 * var(--u));
+    font-size: calc(26 * var(--u));
+    letter-spacing: calc(1.5 * var(--u));
+    text-shadow: 0 calc(2 * var(--u)) 0 rgba(0, 0, 0, 0.45);
+  }
+
+  /* HERO LOGO */
+  .hero-center-logo {
+    margin-top: calc(200 * var(--u));
+    margin-bottom: calc(20 * var(--u));
+  }
+
+  .hero-logo-img {
+    max-width: calc(950 * var(--u));
+    transform: translateY(calc(36 * var(--u)));
+  }
+
+  .hero-logo-img:hover {
+    transform: translateY(calc(32 * var(--u)));
+  }
+
+  @keyframes heroShake {
+    0%,
+    85%,
+    100% {
+      transform: translateY(calc(36 * var(--u))) rotate(0deg);
+    }
+    88% {
+      transform: translateY(calc(36 * var(--u))) rotate(-0.7deg);
+    }
+    91% {
+      transform: translateY(calc(36 * var(--u))) rotate(0.7deg);
+    }
+    94% {
+      transform: translateY(calc(36 * var(--u))) rotate(-0.7deg);
+    }
+    97% {
+      transform: translateY(calc(36 * var(--u))) rotate(0.7deg);
+    }
+  }
+
+  .hero-headline {
+    margin-bottom: calc(30 * var(--u));
+  }
+
+  .characters-container {
+    --cw: 100vw;
+    height: calc(800 * var(--u));
+  }
+
+  /* BROWN GRADIENT */
+  .gradient-overlay-wrapper {
+    top: calc(420 * var(--u));
+    height: calc(380 * var(--u));
+  }
+
+  /* BOTTOM SECTION */
+  .section-layers {
+    margin-top: calc(-120 * var(--u));
+    padding-top: calc(130 * var(--u));
+    min-height: calc(800 * var(--u));
+  }
+
+  .yellow-base-wrapper {
+    max-width: calc(820 * var(--u));
+    margin: calc(130 * var(--u)) auto calc(15 * var(--u)) auto;
+  }
+
+  .info-card-text p {
+    font-size: calc(23 * var(--u));
+  }
+
+  .btn-learn-more {
+    margin-top: calc(10 * var(--u));
+    border-width: calc(2.5 * var(--u));
+    border-radius: calc(8 * var(--u));
+    padding: calc(5 * var(--u));
+    box-shadow: 0 calc(4 * var(--u)) calc(8 * var(--u)) rgba(0, 0, 0, 0.35);
+  }
+
+  .btn-learn-more span {
+    border-width: calc(1.5 * var(--u));
+    border-radius: calc(6 * var(--u));
+    padding: calc(6 * var(--u)) calc(36 * var(--u));
+    font-size: calc(28 * var(--u));
+    letter-spacing: calc(1.5 * var(--u));
+    text-shadow: 0 calc(2 * var(--u)) 0 rgba(0, 0, 0, 0.45);
+  }
+
+  @supports (width: calc(tan(atan2(100vw, 1536px)) * 1px)) {
+    :root {
+      --k: tan(atan2(100vw, 1536px));
+    }
+
+    .hero-headline {
+      transform-origin: top center;
+      transform: translateY(calc(30 * var(--u))) scale(var(--k));
+    }
+
+    .hero-headline:hover {
+      transform: translateY(calc(27 * var(--u))) scale(var(--k));
+    }
   }
 }
